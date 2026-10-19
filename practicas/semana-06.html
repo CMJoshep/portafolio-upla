@@ -62,27 +62,11 @@
         gap: 18px;
       }
 
-      .stack {
-        width: 75px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        gap: 6px;
-        height: 72px;
-      }
-
-      .stack span {
+      .badge-hero {
+        width: 78px;
+        height: 78px;
         display: block;
-        width: 16px;
-        border-radius: 10px 10px 0 0;
-        background: linear-gradient(180deg, #e6fdff, #79d1ff);
-        border: 2px solid rgba(255, 255, 255, 0.45);
       }
-
-      .stack span:nth-child(1) { height: 18%; }
-      .stack span:nth-child(2) { height: 32%; }
-      .stack span:nth-child(3) { height: 60%; }
-      .stack span:nth-child(4) { height: 86%; }
 
       .title {
         font-size: 2.3rem;
@@ -95,13 +79,17 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, #2ec9ff, #3d72ff);
-        color: white;
-        font-weight: 800;
-        border-radius: 18px;
-        padding: 12px 20px;
-        letter-spacing: 0.04em;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        width: 120px;
+        height: 120px;
+        background: rgba(255,255,255,0.06);
+        border-radius: 24px;
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.12);
+      }
+
+      .badge img {
+        width: 82px;
+        height: 82px;
+        display: block;
       }
 
       .subtitle {
@@ -148,13 +136,17 @@
       .green-label { background: linear-gradient(135deg, #20d18b, #12b171); }
       .purple-label { background: linear-gradient(135deg, #7b5de6, #5a4fc8); }
 
-      .card h3 {
-        font-size: 2rem;
-        margin-bottom: 12px;
+      .info-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        overflow: hidden;
       }
 
-      .info-box {
-        min-height: 200px;
+      .user-illustration {
+        width: min(240px, 80%);
+        display: block;
       }
 
       .info-box p {
@@ -237,9 +229,9 @@
         padding-top: 10px;
       }
 
-      .stack-demo span:nth-child(1) { height: 30%; }
+      .stack-demo span:nth-child(1) { height: 35%; }
       .stack-demo span:nth-child(2) { height: 55%; }
-      .stack-demo span:nth-child(3) { height: 74%; }
+      .stack-demo span:nth-child(3) { height: 72%; }
       .stack-demo span:nth-child(4) { height: 92%; }
 
       .mini {
@@ -276,15 +268,15 @@
       <section class="hero">
         <div class="hero-top">
           <div class="brand">
-            <div class="stack" aria-label="Pila">
-              <span></span><span></span><span></span><span></span>
-            </div>
+            <img class="badge-hero" src="../assets/cima-stack.svg" alt="Icono de pila" />
             <div>
               <div style="font-size:1.1rem; color:#9fe3ff; font-weight:800;">Cima</div>
               <div class="title">consultarCima()</div>
             </div>
           </div>
-          <div class="badge">Java</div>
+          <div class="badge">
+            <img src="../assets/java-badge.svg" alt="Logo Java" />
+          </div>
         </div>
 
         <p class="subtitle">
@@ -296,12 +288,7 @@
         <div class="two-col">
           <div class="card info-box">
             <div class="method-label cyan-label">1 ¿Qué hace?</div>
-            <div class="stack-demo" aria-label="Pila en muestra">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <p style="margin-top:16px;">
-              Muestra la información del alumno ubicado en el tope sin extraerlo de la estructura.
-            </p>
+            <img class="user-illustration" src="../assets/user-card.svg" alt="Ilustración de usuario" />
           </div>
 
           <div class="card" style="background:linear-gradient(180deg,#081d2d,#0d243c); color:#eefaff;">
