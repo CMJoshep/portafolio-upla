@@ -6,23 +6,26 @@
     <title>Semana 06 - Infografías</title>
     <style>
       :root {
-        --bg-1: #061d2f;
-        --bg-2: #0d2a43;
-        --navy: #0a2540;
-        --cyan: #38d6ff;
-        --cyan-soft: #cfeeff;
-        --blue: #0f86ff;
-        --purple: #7449d5;
-        --green: #23d896;
-        --green-soft: #d7f5ea;
-        --red-soft: #ffe0e0;
+        --bg-deep: #061d2d;
+        --bg-mid: #0d2d4a;
+        --card-bg: #dfeef8;
+        --card-bg-2: #dff6ef;
+        --cyan: #2bc9ff;
+        --cyan-strong: #2cb6f6;
+        --blue-900: #0b2947;
+        --blue-800: #0d3f71;
+        --purple: #7a57f2;
+        --purple-2: #8b62ff;
+        --green: #35d79a;
+        --green-2: #2ac38e;
+        --green-soft: #d8f7eb;
+        --yellow: #f9c74f;
+        --danger: #ff4d4d;
         --text: #eaf6ff;
-        --muted: #cfe7f9;
-        --card-blue: #d9f0ff;
-        --panel-dark: #071d30;
-        --panel-dark-2: #0a2133;
-        --shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
-        --radius: 22px;
+        --ink: #0b2337;
+        --ink-2: #1d3d58;
+        --line: rgba(255,255,255,0.15);
+        --shadow: 0 22px 36px rgba(0,0,0,0.18);
       }
 
       * { box-sizing: border-box; }
@@ -30,14 +33,14 @@
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #061c2d, #0a243b 40%, #09233a 100%);
+        background: linear-gradient(180deg, #071f33 0%, #0d2d4a 100%);
         color: var(--text);
       }
 
       .container {
-        max-width: 1300px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 28px 18px 60px;
+        padding: 24px 18px 60px;
       }
 
       .page {
@@ -45,15 +48,19 @@
         gap: 22px;
       }
 
-      .hero {
-        background: linear-gradient(135deg, #0d3b64, #0e2a4c 80%);
-        border: 4px solid #5fd4ff;
-        border-radius: 26px;
+      .panel {
+        background: rgba(255,255,255,0.03);
+        border: 3px solid rgba(90, 211, 255, 0.9);
+        border-radius: 24px;
         box-shadow: var(--shadow);
-        padding: 22px 26px 18px;
       }
 
-      .hero-row {
+      .hero {
+        background: linear-gradient(135deg, #0d3d66 0%, #0a2c49 70%, #0b2440 100%);
+        padding: 22px 18px 26px;
+      }
+
+      .hero-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -67,351 +74,344 @@
         gap: 18px;
       }
 
-      .stack-icon {
-        width: 86px;
-        height: 86px;
+      .stack {
+        width: 88px;
+        height: 88px;
         border-radius: 18px;
         background: rgba(255,255,255,0.08);
-        border: 2px solid rgba(255,255,255,0.12);
+        border: 2px solid rgba(255,255,255,0.14);
         position: relative;
-        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.06);
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.05);
       }
 
-      .stack-icon::before,
-      .stack-icon::after,
-      .stack-icon span {
+      .stack::before,
+      .stack::after,
+      .stack span {
         content: "";
         position: absolute;
         left: 18px;
         right: 18px;
-        border-radius: 8px;
-        background: linear-gradient(180deg, #a8e8ff, #d5f9ff);
-      }
-      .stack-icon::before { top: 14px; height: 12px; }
-      .stack-icon span { top: 30px; height: 12px; }
-      .stack-icon::after { top: 46px; height: 12px; }
-
-      .stack-icon .mini { top: 62px; }
-      .stack-icon .mini::before,
-      .stack-icon .mini::after {
-        content: "";
-        position: absolute;
-        width: 12px;
         height: 12px;
-        border-radius: 5px;
-        background: rgba(255,255,255,0.7);
-        top: 8px;
+        border-radius: 8px;
+        background: linear-gradient(180deg, #d8fbff, #bfe8ff);
       }
-      .stack-icon .mini::before { left: 10px; }
-      .stack-icon .mini::after { right: 10px; }
+      .stack::before { top: 14px; }
+      .stack span { top: 30px; }
+      .stack::after { top: 46px; }
 
-      .brand-title {
-        font-size: 1.15rem;
+      .brand-label {
+        font-size: 1.1rem;
         font-weight: 800;
-        color: #9fe4ff;
-        margin-bottom: 4px;
+        color: #cfeeff;
       }
 
-      .method-name {
-        font-size: clamp(2rem, 4vw, 3.2rem);
+      .title {
+        font-size: clamp(2.1rem, 4vw, 3.2rem);
         font-weight: 900;
-        letter-spacing: -0.06em;
-        color: #fff;
+        letter-spacing: -0.08em;
+        margin: 0;
       }
 
-      .java-tag {
-        width: 88px;
-        height: 88px;
-        border-radius: 24px;
-        background: rgba(255,255,255,0.08);
+      .title-inline {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .java-box {
+        width: 92px;
+        height: 92px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.10);
+        border: 2px solid rgba(255,255,255,0.16);
         display: grid;
         place-items: center;
-        border: 2px solid rgba(255,255,255,0.16);
-      }
-      .java-tag::before {
-        content: "☕";
-        font-size: 42px;
-        line-height: 1;
+        font-size: 2.4rem;
       }
 
-      .hero-copy {
-        margin-top: 16px;
-        max-width: 860px;
-        font-size: 1.1rem;
+      .hero-text {
+        margin-top: 18px;
+        font-size: clamp(1.05rem, 2vw, 1.5rem);
         line-height: 1.5;
-        color: #d9eaf8;
+        color: #dfeefb;
+        max-width: 980px;
       }
 
-      .infographic {
-        background: rgba(255,255,255,0.04);
-        border-radius: 22px;
-        border: 2px solid rgba(255,255,255,0.08);
-        padding: 18px;
-        box-shadow: var(--shadow);
-      }
-
-      .top-grid {
+      .grid-2 {
         display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 20px;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 18px;
       }
 
-      .left-panel,
-      .right-panel,
-      .step-card,
-      .summary-box,
-      .mini-panel {
-        border-radius: 18px;
+      .card {
+        border-radius: 14px;
+        overflow: hidden;
         box-shadow: var(--shadow);
       }
 
-      .left-panel {
-        background: linear-gradient(180deg, #dff2ff, #d6ecff);
-        color: #0d1f33;
-        padding: 20px 20px 16px;
+      .card-soft {
+        background: linear-gradient(180deg, #dff1ff 0%, #d6ebff 100%);
+        color: var(--ink);
       }
 
-      .label {
+      .card-dark {
+        background: linear-gradient(180deg, #09172a 0%, #0f233b 100%);
+        border: 2px solid rgba(114, 187, 255, 0.7);
+        color: var(--text);
+      }
+
+      .card-head {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 18px;
-        font-weight: 900;
-        font-size: clamp(1.3rem, 2vw, 2rem);
-        letter-spacing: -0.05em;
-        padding: 12px 18px;
-        min-height: 64px;
-        margin-bottom: 18px;
-        color: #fff;
-      }
-      .label.cyan { background: linear-gradient(135deg, #47d1ff, #4b7cff); }
-      .label.green { background: linear-gradient(135deg, #2ddc9a, #18a870); }
-      .label.purple { background: linear-gradient(135deg, #8d5dff, #5f46d7); }
-      .label.orange { background: linear-gradient(135deg, #ffb84b, #ff8c4b); }
-
-      .user-box {
+        min-height: 62px;
         width: 100%;
-        min-height: 220px;
-        background: rgba(255,255,255,0.15);
-        border: 2px solid rgba(28,70,104,0.3);
+        padding: 14px 18px;
+        font-size: clamp(1.8rem, 2vw, 2.4rem);
+        font-weight: 900;
+        letter-spacing: -0.06em;
+        border-radius: 14px 14px 0 0;
+      }
+
+      .card-head.cyan {
+        background: linear-gradient(135deg, #2cc7ff 0%, #4b7cff 100%);
+        color: white;
+      }
+
+      .card-head.green {
+        background: linear-gradient(135deg, #31d992 0%, #1ea86f 100%);
+        color: white;
+      }
+
+      .card-head.purple {
+        background: linear-gradient(135deg, #8e5ef1 0%, #6d47d5 100%);
+        color: white;
+      }
+
+      .card-body {
+        padding: 18px 18px 16px;
+      }
+
+      .what-box {
+        background: rgba(255,255,255,0.18);
+        border: 2px solid rgba(18,53,77,0.25);
         border-radius: 18px;
+        min-height: 230px;
         display: grid;
         place-items: center;
-        padding: 18px;
+        padding: 16px;
       }
 
-      .user-icon {
-        width: 160px;
-        height: 160px;
-        border-radius: 28px;
-        background: linear-gradient(180deg, #effaff, #dfeaef);
-        border: 3px solid rgba(39, 96, 140, 0.3);
+      .user-figure {
+        width: 150px;
+        height: 150px;
+        border-radius: 26px;
+        background: linear-gradient(180deg, #edfaff 0%, #dfeeff 100%);
+        border: 3px solid rgba(24, 82, 118, 0.25);
         position: relative;
       }
-      .user-icon::before {
+
+      .user-figure::before {
         content: "";
         position: absolute;
         left: 50%;
-        top: 22px;
-        width: 52px;
-        height: 52px;
+        top: 26px;
+        width: 46px;
+        height: 46px;
         border-radius: 50%;
-        background: linear-gradient(180deg, #4cc0ff, #1d7fff);
         transform: translateX(-50%);
+        background: linear-gradient(180deg, #4cc6ff, #237cf5);
       }
-      .user-icon::after {
+
+      .user-figure::after {
         content: "";
         position: absolute;
         left: 18px;
         right: 18px;
         bottom: 18px;
-        height: 64px;
-        border-radius: 20px 20px 12px 12px;
-        background: linear-gradient(180deg, #4cc0ff, #1d7fff);
+        height: 56px;
+        border-radius: 20px 20px 10px 10px;
+        background: linear-gradient(180deg, #58c8ff, #2c7ef4);
       }
 
-      .list {
-        margin-top: 18px;
-        list-style: disc;
-        padding-left: 24px;
-        color: #173f5b;
-        font-size: 1.03rem;
+      .what-list {
+        margin: 18px 0 0;
+        padding-left: 22px;
+        color: #103a56;
+        font-size: 1.08rem;
         line-height: 1.8;
       }
 
-      .right-panel {
-        background: linear-gradient(180deg, #090f1f, #0d1e34);
-        border: 2px solid rgba(98, 178, 255, 0.7);
-        padding: 18px;
-      }
-
-      .codebox {
-        background: #071a2b;
-        color: #ebf9ff;
-        border: 2px solid rgba(119, 193, 255, 0.55);
+      .code-box {
+        background: #071b2b;
+        border: 2px solid rgba(117, 195, 255, 0.7);
         border-radius: 16px;
         padding: 18px 16px;
-        overflow: auto;
-        min-height: 290px;
+        min-height: 270px;
         font-size: 0.95rem;
         line-height: 1.8;
+        overflow: auto;
       }
 
-      .token-key { color: #72d9ff; }
-      .token-str { color: #96ed8d; }
-      .token-var { color: #f7d57b; }
-      .token-op { color: #d5d7ff; }
+      .token-key { color: #65d3ff; }
+      .token-var { color: #ffd36a; }
+      .token-str { color: #9bf18b; }
+      .token-op { color: #dfe7ff; }
 
-      .step-grid {
+      .steps {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 16px;
       }
 
-      .step-card {
-        background: linear-gradient(180deg, #dff1ff, #d5ebff);
-        color: #133755;
+      .step {
+        background: linear-gradient(180deg, #dff3ff 0%, #d6ecff 100%);
+        border-radius: 18px;
+        color: var(--ink);
         padding: 18px 18px 14px;
+        box-shadow: var(--shadow);
       }
 
-      .step-card h3 {
-        margin: 0 0 12px;
-        font-size: 2.1rem;
-        letter-spacing: -0.06em;
+      .step-number {
+        margin: 0 0 10px;
+        font-size: 2rem;
+        font-weight: 900;
+        letter-spacing: -0.05em;
       }
 
-      .step-card p {
+      .step p {
         margin: 0;
-        font-size: 1.03rem;
-        line-height: 1.55;
+        line-height: 1.5;
+        font-size: 1.04rem;
       }
 
-      .alert-box {
+      .callout {
         margin-top: 14px;
-        background: #eef8ff;
-        border: 2px solid rgba(77, 125, 176, 0.3);
+        background: #eef9ff;
+        border: 2px solid rgba(35, 90, 136, 0.3);
         border-radius: 12px;
         padding: 14px 12px;
         font-weight: 700;
         line-height: 1.5;
+        color: #0d2441;
       }
 
       .stack-demo {
         display: flex;
-        align-items: end;
+        align-items: flex-end;
         gap: 8px;
         height: 120px;
-        background: rgba(255,255,255,0.3);
-        border: 1px solid rgba(20,57,84,0.18);
+        background: rgba(255,255,255,0.22);
+        border: 1px solid rgba(25,58,82,0.18);
         border-radius: 12px;
         padding: 10px;
         margin-top: 16px;
       }
+
       .stack-demo span {
         flex: 1;
         display: flex;
         align-items: flex-end;
         justify-content: center;
         border-radius: 8px 8px 0 0;
+        background: linear-gradient(180deg, #6ad7ff 0%, #2f7bf4 100%);
         color: white;
         font-weight: 800;
-        background: linear-gradient(180deg, #65d1ff, #2a7ef5);
       }
+
       .stack-demo span:nth-child(1) { height: 34%; }
       .stack-demo span:nth-child(2) { height: 54%; }
       .stack-demo span:nth-child(3) { height: 73%; }
       .stack-demo span:nth-child(4) { height: 92%; }
 
-      .mini-tag {
-        display: inline-block;
+      .mini-chip {
+        display: inline-flex;
         margin-top: 14px;
-        background: #e7f7ff;
-        border: 2px solid rgba(30,108,150,0.2);
-        border-radius: 12px;
         padding: 8px 12px;
+        border-radius: 12px;
+        background: #edf8ff;
+        border: 2px solid rgba(22,87,128,0.25);
         font-weight: 800;
+        color: var(--ink);
       }
 
-      .summary-box {
-        background: linear-gradient(135deg, #7c57f4, #664bd3);
+      .summary {
+        background: linear-gradient(135deg, #7e5af5 0%, #6f49d8 100%);
         border: 2px solid rgba(255,255,255,0.2);
+        border-radius: 18px;
         color: white;
-        font-weight: 900;
-        font-size: 1.25rem;
-        line-height: 1.5;
-        padding: 18px 20px;
-      }
-
-      .card-block {
-        margin-top: 4px;
-      }
-
-      .mini-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .mini-panel {
-        background: linear-gradient(180deg, #dff2ff, #d4ebff);
-        color: #123955;
         padding: 18px;
+        font-weight: 900;
+        font-size: clamp(1.15rem, 2vw, 1.5rem);
+        line-height: 1.5;
+        box-shadow: var(--shadow);
       }
-      .mini-panel h4 {
-        margin: 0 0 10px;
-        font-size: 1.5rem;
+
+      .subpanel {
+        background: rgba(255,255,255,0.03);
+        border: 3px solid rgba(90, 211, 255, 0.9);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 20px 18px;
       }
-      .mini-panel p { margin: 0; line-height: 1.5; }
+
+      .subpanel .heading {
+        font-size: clamp(1.7rem, 2vw, 2.1rem);
+        font-weight: 900;
+        color: #dff2ff;
+        margin-bottom: 14px;
+      }
 
       @media (max-width: 980px) {
-        .top-grid,
-        .step-grid,
-        .mini-row { grid-template-columns: 1fr; }
+        .grid-2,
+        .steps { grid-template-columns: 1fr; }
       }
 
-      @media (max-width: 560px) {
-        .method-name { font-size: 1.8rem; }
-        .label { font-size: 1.5rem; }
-        .hero { padding: 18px 16px; }
+      @media (max-width: 540px) {
+        .title { font-size: 2rem; }
+        .hero { padding: 18px 14px; }
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="page">
-        <section class="hero">
-          <div class="hero-row">
+
+        <section class="panel hero">
+          <div class="hero-inner">
             <div class="brand">
-              <div class="stack-icon"><span></span></div>
+              <div class="stack"><span></span></div>
               <div>
-                <div class="brand-title">Cima</div>
-                <div class="method-name">consultarCima()</div>
+                <div class="brand-label">Cima</div>
+                <h1 class="title">consultarCima()</h1>
               </div>
             </div>
-            <div class="java-tag" aria-label="Logo Java"></div>
+            <div class="java-box">☕</div>
           </div>
-          <div class="hero-copy">
+          <div class="hero-text">
             Muestra la información del alumno ubicado en el tope sin extraerlo de la estructura.
           </div>
         </section>
 
-        <section class="infographic">
-          <div class="top-grid">
-            <div class="left-panel">
-              <div class="label cyan">1 ¿Qué hace?</div>
-              <div class="user-box">
-                <div class="user-icon"></div>
+        <section class="grid-2">
+          <div class="card card-soft">
+            <div class="card-head cyan">1 ¿Qué hace?</div>
+            <div class="card-body">
+              <div class="what-box">
+                <div class="user-figure"></div>
               </div>
-              <ul class="list">
-                <li>Visualiza la información del alumno en el tope.</li>
+              <ul class="what-list">
+                <li>Muestra la información del alumno en el tope.</li>
                 <li>Consulta sin eliminarlo.</li>
-                <li>Revisa si la pila está vacía antes de acceder.</li>
+                <li>Verifica si la pila está vacía antes de acceder.</li>
               </ul>
             </div>
+          </div>
 
-            <div class="right-panel">
-              <div class="label purple">2 Código del método</div>
-              <pre class="codebox"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">consultarCima</span>() {
+          <div class="card card-dark">
+            <div class="card-head purple">2 Código del método</div>
+            <div class="card-body">
+              <pre class="code-box"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">consultarCima</span>() {
     <span class="token-key">if</span> (<span class="token-var">estaVacia</span>()) {
         System.out.println(<span class="token-str">"La pila está vacía.\nNo hay elementos en la cima."</span>);
         <span class="token-key">return</span>;
@@ -424,58 +424,63 @@
           </div>
         </section>
 
-        <section class="infographic">
-          <div class="label green">3 Paso a paso</div>
-          <div class="step-grid">
-            <article class="step-card">
-              <h3>1. Verifica</h3>
-              <p>Se llama al método <strong>estaVacia()</strong>. Si la pila no tiene elementos, se muestra un mensaje y termina el método.</p>
-              <div class="alert-box">La pila está vacía.<br />No hay elementos en la cima.</div>
-            </article>
+        <section class="card card-soft">
+          <div class="card-head green">3 Paso a paso</div>
+          <div class="card-body">
+            <div class="steps">
+              <article class="step">
+                <h3 class="step-number">1.</h3>
+                <p>Se llama al método <strong>estaVacia()</strong>. Si la pila no tiene elementos, se muestra un mensaje y termina el método.</p>
+                <div class="callout">La pila está vacía.<br />No hay elementos en la cima.</div>
+              </article>
 
-            <article class="step-card">
-              <h3>2. Accede</h3>
-              <p>Si la pila tiene elementos, se accede directamente al índice <strong>top</strong> del arreglo para obtener el alumno que está en la cima.</p>
-              <div class="stack-demo">
-                <span>A</span>
-                <span>B</span>
-                <span>C</span>
-                <span>D</span>
-              </div>
-              <div class="mini-tag">top → Alumno 3</div>
-            </article>
+              <article class="step">
+                <h3 class="step-number">2.</h3>
+                <p>Si la pila tiene elementos, se accede directamente al índice <strong>top</strong> del arreglo para obtener el alumno que está en la cima.</p>
+                <div class="stack-demo">
+                  <span>A</span>
+                  <span>B</span>
+                  <span>C</span>
+                  <span>D</span>
+                </div>
+                <div class="mini-chip">top → Alumno 3</div>
+              </article>
 
-            <article class="step-card">
-              <h3>3. Imprime</h3>
-              <p>Finalmente, se imprime la información del alumno en la cima y se muestra un separador.</p>
-              <div class="alert-box">--- INFORMACIÓN DE LA CIMA ---<br />Alumno 3</div>
-            </article>
+              <article class="step">
+                <h3 class="step-number">3.</h3>
+                <p>Finalmente, se imprime la información del alumno en la cima y se muestra un separador.</p>
+                <div class="callout">--- INFORMACIÓN DE LA CIMA ---<br />Alumno 3</div>
+              </article>
+            </div>
           </div>
         </section>
 
-        <div class="summary-box">
+        <div class="summary">
           consultarCima() verifica si la pila está vacía y, si tiene elementos, accede al índice top del arreglo para mostrar sus datos sin extraerlos.
         </div>
 
-        <section class="infographic">
-          <div class="card-block">
-            <div class="top-grid">
-              <div class="left-panel">
-                <div class="label cyan">¿Qué hace?</div>
-                <div class="user-box" style="min-height: 220px;">
-                  <div class="user-icon" style="width: 150px; height: 150px;"></div>
+        <section class="panel subpanel">
+          <div class="heading">buscarAlumnoPorCodigo(String codigo)</div>
+          <div class="grid-2">
+            <div class="card card-soft">
+              <div class="card-head cyan">1 ¿Qué hace?</div>
+              <div class="card-body">
+                <div class="what-box">
+                  <div class="user-figure" style="width: 150px; height: 150px;"></div>
                 </div>
-                <ul class="list">
-                  <li>Busca un alumno dentro de la pila usando su código.</li>
-                  <li>Si existe, devuelve sus datos.</li>
-                  <li>Si no existe, muestra un mensaje.</li>
+                <ul class="what-list">
+                  <li>Busca un alumno en la pila usando su código.</li>
+                  <li>Si existe, muestra sus datos.</li>
+                  <li>Si no existe, informa que no se encontró.</li>
                 </ul>
               </div>
+            </div>
 
-              <div class="right-panel">
-                <div class="label purple">Código del método</div>
-                <pre class="codebox"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">buscarAlumnoPorCodigo</span>(String codigo) {
-    <span class="token-key">if</span> (estaVacia()) {
+            <div class="card card-dark">
+              <div class="card-head purple">2 Código del método</div>
+              <div class="card-body">
+                <pre class="code-box"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">buscarAlumnoPorCodigo</span>(String codigo) {
+    <span class="token-key">if</span> (<span class="token-var">estaVacia</span>()) {
         System.out.println(<span class="token-str">"La pila está vacía. No se puede realizar la búsqueda."</span>);
         <span class="token-key">return</span>;
     }
@@ -497,45 +502,52 @@
           </div>
         </section>
 
-        <section class="infographic">
-          <div class="label green">Paso a paso</div>
-          <div class="mini-row">
-            <article class="mini-panel">
-              <h4>3.1 Verifica</h4>
-              <p>Si la pila está vacía, muestra un mensaje y termina la búsqueda.</p>
-            </article>
-            <article class="mini-panel">
-              <h4>3.2 Recorre</h4>
-              <p>Se usa un ciclo para recorrer la pila desde el tope hasta la base y comparar códigos.</p>
-            </article>
-            <article class="mini-panel">
-              <h4>3.3 Compara</h4>
-              <p>Si encuentra coincidencia, imprime los datos del alumno y marca la variable <strong>encontrado</strong>.</p>
-            </article>
-            <article class="mini-panel">
-              <h4>3.4 Final</h4>
-              <p>Si no existe, muestra el mensaje de que no se encontró ningún registro con ese código.</p>
-            </article>
+        <section class="card card-soft">
+          <div class="card-head green">3 Paso a paso</div>
+          <div class="card-body">
+            <div class="steps">
+              <article class="step">
+                <h3 class="step-number">3.1</h3>
+                <p>Si la pila está vacía, se muestra un mensaje y termina la búsqueda.</p>
+                <div class="callout">La pila está vacía.</div>
+              </article>
+
+              <article class="step">
+                <h3 class="step-number">3.2</h3>
+                <p>Se usa un ciclo para recorrer la pila desde el tope hasta la base y comparar códigos.</p>
+                <div class="callout">Se recorre la pila desde la cima.</div>
+              </article>
+
+              <article class="step">
+                <h3 class="step-number">3.3</h3>
+                <p>Si encuentra coincidencia, imprime sus datos y termina la búsqueda.</p>
+                <div class="callout">Alumno encontrado.</div>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section class="infographic">
-          <div class="top-grid">
-            <div class="left-panel">
-              <div class="label orange">¿Qué hace?</div>
-              <div class="user-box">
-                <div class="user-icon" style="width: 150px; height: 150px;"></div>
+        <section class="panel subpanel">
+          <div class="heading">mostrarEstadoCapacidad()</div>
+          <div class="grid-2">
+            <div class="card card-soft">
+              <div class="card-head cyan">1 ¿Qué hace?</div>
+              <div class="card-body">
+                <div class="what-box">
+                  <div class="user-figure" style="width: 150px; height: 150px;"></div>
+                </div>
+                <ul class="what-list">
+                  <li>Calcula y muestra el total de la capacidad.</li>
+                  <li>Indica los elementos actuales almacenados.</li>
+                  <li>Determina los espacios libres disponibles.</li>
+                </ul>
               </div>
-              <ul class="list">
-                <li>Calcula y muestra el total de la capacidad.</li>
-                <li>Indica la cantidad de elementos actuales.</li>
-                <li>Determina los espacios libres restantes.</li>
-              </ul>
             </div>
 
-            <div class="right-panel">
-              <div class="label purple">Código del método</div>
-              <pre class="codebox"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">mostrarEstadoCapacidad</span>() {
+            <div class="card card-dark">
+              <div class="card-head purple">2 Código del método</div>
+              <div class="card-body">
+                <pre class="code-box"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">mostrarEstadoCapacidad</span>() {
     <span class="token-key">int</span> elementosActuales = top + 1;
     <span class="token-key">int</span> espaciosLibres = capacidad - elementosActuales;
     System.out.println(<span class="token-str">"--- ESTADO DE CAPACIDAD DE LA PILA ---"</span>);
@@ -543,30 +555,105 @@
     System.out.println(<span class="token-str">"Elementos almacenados: "</span> + elementosActuales);
     System.out.println(<span class="token-str">"Espacios libres: "</span> + espaciosLibres);
 }</pre>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="infographic">
-          <div class="label green">Explicación del código</div>
-          <div class="step-grid">
-            <article class="step-card">
-              <h3>3.1</h3>
-              <p>Como el índice top comienza en -1, la cantidad de elementos actuales se obtiene con:</p>
-              <div class="alert-box">elementosActuales = top + 1</div>
-            </article>
-            <article class="step-card">
-              <h3>3.2</h3>
-              <p>Se resta la cantidad de elementos actuales a la capacidad total para obtener los espacios libres:</p>
-              <div class="alert-box">espaciosLibres = capacidad - elementosActuales</div>
-            </article>
-            <article class="step-card">
-              <h3>3.3</h3>
-              <p>Finalmente, se imprime el mensaje con los tres datos: capacidad total, elementos almacenados y espacios libres.</p>
-              <div class="alert-box">ESTADO DE CAPACIDAD DE LA PILA</div>
-            </article>
+        <section class="card card-soft">
+          <div class="card-head green">3 Explicación del código</div>
+          <div class="card-body">
+            <div class="steps">
+              <article class="step">
+                <h3 class="step-number">3.1</h3>
+                <p>Como el índice top comienza en -1, la cantidad de elementos actuales se obtiene con:</p>
+                <div class="callout">elementosActuales = top + 1</div>
+              </article>
+
+              <article class="step">
+                <h3 class="step-number">3.2</h3>
+                <p>Se resta la cantidad de elementos actuales a la capacidad total para obtener los espacios libres:</p>
+                <div class="callout">espaciosLibres = capacidad - elementosActuales</div>
+              </article>
+
+              <article class="step">
+                <h3 class="step-number">3.3</h3>
+                <p>Finalmente, se imprime el mensaje con los tres datos: capacidad total, elementos almacenados y espacios libres.</p>
+                <div class="callout">ESTADO DE CAPACIDAD DE LA PILA</div>
+              </article>
+            </div>
           </div>
         </section>
+
+        <section class="panel subpanel">
+          <div class="heading">verificarEstadoLogico()</div>
+          <div class="grid-2">
+            <div class="card card-soft">
+              <div class="card-head cyan">¿Qué hace?</div>
+              <div class="card-body">
+                <div class="what-box">
+                  <div class="user-figure" style="width: 150px; height: 150px;"></div>
+                </div>
+                <ul class="what-list">
+                  <li>Evalúa y explica si la pila está vacía o no.</li>
+                  <li>Devuelve un valor booleano.</li>
+                  <li>Sirve para validar el estado antes de otras operaciones.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card card-dark">
+              <div class="card-head purple">Código del método</div>
+              <div class="card-body">
+                <pre class="code-box"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">verificarEstadoLogico</span>() {
+    System.out.println(<span class="token-str">"--- VERIFICACIÓN DE ESTADO LÓGICO ---"</span>);
+    System.out.println(<span class="token-str">"¿La pila está vacía? -> "</span> + <span class="token-var">estaVacia</span>());
+    System.out.println(<span class="token-str">"¿La pila está llena? -> "</span> + <span class="token-var">estaLlena</span>());
+    System.out.println(<span class="token-str">"---------------------------------"</span>);
+}</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel subpanel">
+          <div class="heading">mostrarMejorPromedio()</div>
+          <div class="grid-2">
+            <div class="card card-soft">
+              <div class="card-head cyan">¿Qué hace?</div>
+              <div class="card-body">
+                <div class="what-box">
+                  <div class="user-figure" style="width: 150px; height: 150px;"></div>
+                </div>
+                <ul class="what-list">
+                  <li>Analiza los elementos en la pila.</li>
+                  <li>Determina cuál estudiante tiene el mayor promedio.</li>
+                  <li>Lo muestra en pantalla.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card card-dark">
+              <div class="card-head purple">Código del método</div>
+              <div class="card-body">
+                <pre class="code-box"><span class="token-key">public</span> <span class="token-key">void</span> <span class="token-var">mostrarMejorPromedio</span>() {
+    <span class="token-key">if</span> (<span class="token-var">estaVacia</span>()) {
+        System.out.println(<span class="token-str">"La pila está vacía."</span>);
+        <span class="token-key">return</span>;
+    }
+    <span class="token-key">float</span> mejorAlumno = 0;
+    <span class="token-key">for</span> (<span class="token-key">int</span> i = 0; i &lt;= top; i++) {
+        <span class="token-key">if</span> (arregloPila[i].getPromedio() &gt; mejorAlumno) {
+            mejorAlumno = arregloPila[i].getPromedio();
+        }
+    }
+    System.out.println(<span class="token-str">"El mejor promedio es: "</span> + mejorAlumno);
+}</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   </body>
