@@ -419,7 +419,7 @@
       .accordion-item.active .toggle-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
 
       .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-      .accordion-item.active .accordion-content { max-height: 1400px; }
+      .accordion-item.active .accordion-content { max-height: 1800px; }
       .accordion-body { padding: 0 1.2rem 1.2rem; }
 
       .week-list { display: grid; gap: 0.9rem; }
@@ -444,6 +444,56 @@
       }
       .week-meta strong { font-size: 1.02rem; }
       .week-item p { color: var(--muted); margin: 0; }
+
+      .activity-list {
+        list-style: none;
+        display: grid;
+        gap: 0.5rem;
+        margin-top: 0.35rem;
+      }
+
+      .activity-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.7rem;
+        padding: 0.55rem 0.7rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(146, 179, 213, 0.12);
+        color: var(--muted);
+        flex-wrap: wrap;
+      }
+
+      .activity-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 98px;
+        padding: 0.3rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(0, 210, 255, 0.1);
+        border: 1px solid rgba(0, 210, 255, 0.2);
+        color: var(--cyan);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .activity-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.2rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(121, 40, 202, 0.14);
+        border: 1px solid rgba(121, 40, 202, 0.3);
+        color: #d9c7ff;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
 
       .practice-btn {
         background: rgba(121, 40, 202, 0.12);
@@ -532,7 +582,7 @@
               <img
                 src="foto.png.jpg"
                 alt="Joshep Emerson Condori Moreno"
-                onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%230b192c%22/%3E%3Ccircle cx=%22150%22 cy=%22110%22 r=%2270%22 fill=%22%2300d2ff%22 opacity=%220.9%22/%3E%3Crect x=%2250%22 y=%22170%22 width=%22200%22 height=%2295%22 rx=%2245%22 fill=%22%237928ca%22 opacity=%220.9%22/%3E%3C/svg%3E';"
+                onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%230d1b2a%22/%3E%3Ccircle cx=%22150%22 cy=%22110%22 r=%2275%22 fill=%22%2300d2ff%22/%3E%3Crect x=%2260%22 y=%22180%22 width=%22180%22 height=%2270%22 rx=%2210%22 fill=%22%237928ca%22/%3E%3C/svg%3E';"
               />
             </div>
 
@@ -639,36 +689,52 @@
                       <div class="week-meta">
                         <span class="week-label">Semana 01</span>
                         <strong>Arreglos Bidimensionales</strong>
-                        <p>Actividad 1: Métodos con arreglos</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Ejercicios de práctica</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Refuerzo y retroalimentación</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 02</span>
                         <strong>Arreglos Paralelos y Arreglos de Objetos</strong>
-                        <p>Actividad 1: Métodos con matrices</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Uso de datos paralelos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación real</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 03</span>
                         <strong>ArrayList y Vector</strong>
-                        <p>Actividad 1: Registro de alumnos y promedio</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Registro de alumnos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Promedio y análisis</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 04</span>
                         <strong>LinkedList</strong>
-                        <p>Actividad 1: Gestión de alumnos y promedios</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de alumnos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Comparación de estructuras</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
                   </div>
                 </div>
@@ -689,36 +755,52 @@
                       <div class="week-meta">
                         <span class="week-label">Semana 05</span>
                         <strong>Pilas</strong>
-                        <p>Actividad 01: Métodos con ArrayList</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Métodos con ArrayList</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Ejercicios de validación</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 06</span>
                         <strong>Colas</strong>
-                        <p>Actividad 01: Gestión de alumnos con pilas</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de alumnos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Evaluación y conclusiones</span></li>
+                        </ul>
                       </div>
-                      <a href="practicas/semana-06.html" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="practicas/semana-06.html" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 07</span>
                         <strong>Recursividad</strong>
-                        <p>Introducción a la recursividad</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Introducción a la recursión</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Práctica guiada</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 08</span>
                         <strong>Recursividad Anidada</strong>
-                        <p>Aplicación de recursividad anidada</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Aplicación recursiva</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Resolución de casos</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
                   </div>
                 </div>
@@ -744,36 +826,52 @@
                       <div class="week-meta">
                         <span class="week-label">Semana 09</span>
                         <strong>Conceptos básicos</strong>
-                        <p>Lista enlazada simple y operaciones iniciales</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Lista enlazada simple</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Operaciones iniciales</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 10</span>
                         <strong>Inserción y eliminación</strong>
-                        <p>Práctica de gestión de nodos y listas</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de nodos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Validación de lista</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 11</span>
                         <strong>Recorrido y comprobación</strong>
-                        <p>Laboratorio de búsqueda y recorrido</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Búsqueda y recorrido</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Laboratorio práctico</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 12</span>
                         <strong>Evaluación de listas</strong>
-                        <p>Entrega de práctica integradora</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Prueba de ejercicios</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Entrega integradora</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
                   </div>
                 </div>
@@ -799,36 +897,52 @@
                       <div class="week-meta">
                         <span class="week-label">Semana 13</span>
                         <strong>Árboles</strong>
-                        <p>Conceptos, recorrido y estructura básica</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Recorridos básicos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Práctica estructural</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 14</span>
                         <strong>Grafos</strong>
-                        <p>Representación, recorridos y aplicación</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Representación y recorridos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación práctica</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 15</span>
                         <strong>Ordenación</strong>
-                        <p>Algoritmos de ordenamiento y análisis</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Algoritmos de ordenamiento</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Análisis comparativo</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 16</span>
                         <strong>Búsqueda</strong>
-                        <p>Entrega final y práctica integradora</p>
+                        <ul class="activity-list">
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Algoritmos de búsqueda</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Entrega final</span></li>
+                        </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                      <a href="#" class="practice-btn">Ver Práctica</a>
                     </div>
                   </div>
                 </div>
