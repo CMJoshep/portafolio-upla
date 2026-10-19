@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio académico universitario de Joshep Emerson Condori Moreno - Universidad Peruana Los Andes"
+    />
+    <title>UPLA | Portafolio Académico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-900: #050b14;
+        --bg-800: #0b192c;
+        --panel: #102a45;
+        --panel-strong: #14375f;
+        --panel-soft: #1a3f63;
+        --line: rgba(146, 179, 213, 0.18);
+        --cyan: #00d2ff;
+        --violet: #7928ca;
+        --text: #edf7ff;
+        --muted: #a8bdd8;
+        --white: #ffffff;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        --radius: 12px;
+        --radius-xl: 20px;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(121, 40, 202, 0.16), transparent 28%),
+          radial-gradient(circle at left center, rgba(0, 210, 255, 0.18), transparent 22%),
+          linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+      button { font: inherit; }
+      .container { width: min(1120px, calc(100% - 1.6rem)); margin: 0 auto; }
+      .eyebrow {
+        color: var(--cyan);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      h1, h2, h3, h4 { letter-spacing: -0.04em; line-height: 1.1; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(12px);
+        background: rgba(5, 11, 20, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        color: var(--white);
+        font-size: 0.9rem;
+        box-shadow: 0 0 18px rgba(0, 210, 255, 0.45);
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .nav-links a { transition: color 0.25s ease; }
+      .nav-links a:hover { color: var(--white); }
+
+      .login-btn, .primary-btn, .secondary-btn, .practice-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      .login-btn {
+        padding: 0.8rem 1.2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .login-btn:hover, .primary-btn:hover, .secondary-btn:hover, .practice-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero { padding: 3.5rem 0 2rem; }
+      .hero-grid { display: grid; gap: 1.5rem; }
+
+      .hero-copy { display: flex; flex-direction: column; justify-content: center; }
+      .hero-copy h1 {
+        font-size: clamp(2.2rem, 6vw, 4.1rem);
+        margin-top: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .student-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        color: var(--muted);
+        font-size: 0.96rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .student-meta span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--line);
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        color: #dfeeff;
+        max-width: 720px;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-bottom: 1.6rem;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        color: var(--white);
+        font-weight: 700;
+        padding: 1rem 1.5rem;
+        box-shadow: 0 0 26px rgba(0, 210, 255, 0.35);
+      }
+
+      .secondary-btn {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        padding: 1rem 1.5rem;
+        font-weight: 600;
+      }
+
+      .info-list {
+        list-style: none;
+        display: grid;
+        gap: 0.65rem;
+        color: var(--muted);
+        max-width: 560px;
+      }
+
+      .info-list li { position: relative; padding-left: 1.5rem; }
+      .info-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.62rem;
+        width: 0.56rem;
+        height: 0.56rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        box-shadow: 0 0 18px rgba(0, 210, 255, 0.4);
+      }
+
+      .profile-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(16, 42, 69, 0.94), rgba(13, 29, 44, 0.9));
+        border: 1px solid rgba(146, 179, 213, 0.18);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+        padding: 1.2rem;
+      }
+
+      .profile-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.26), rgba(121, 40, 202, 0.18), transparent);
+        z-index: -1;
+      }
+
+      .photo-frame {
+        width: min(260px, 72vw);
+        aspect-ratio: 1;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        border: 3px solid rgba(0, 210, 255, 0.8);
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.32), 0 0 50px rgba(121, 40, 202, 0.22);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-details { display: grid; gap: 0.7rem; margin-top: 1rem; }
+      .profile-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 0.8rem 0.9rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid var(--line);
+      }
+
+      .profile-row span:first-child { color: var(--muted); }
+      .profile-row strong { color: var(--white); font-weight: 700; }
+
+      .courses { padding: 2.5rem 0 1rem; }
+      .section-heading { margin-bottom: 1.5rem; }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .metric-card {
+        background: rgba(19, 41, 64, 0.9);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.2rem 0.8rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      .metric-card .value {
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.3rem);
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1.1;
+      }
+
+      .metric-card .label {
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      .course-card {
+        background: linear-gradient(180deg, rgba(16, 42, 69, 0.95), rgba(11, 25, 44, 0.92));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+        padding: 1.3rem;
+      }
+
+      .course-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .course-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      .course-badges span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(0, 210, 255, 0.08);
+        border: 1px solid rgba(0, 210, 255, 0.18);
+        color: var(--cyan);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .course-card h3 {
+        font-size: clamp(1.6rem, 4vw, 2.5rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .course-card > p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+        max-width: 760px;
+      }
+
+      .course-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 0.8rem;
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      .course-details li {
+        padding: 0.8rem 0.9rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .course-details strong {
+        display: block;
+        color: var(--white);
+        margin-bottom: 0.2rem;
+      }
+
+      .units { padding: 2.5rem 0 4rem; }
+      .accordion { display: grid; gap: 1rem; }
+      .accordion-item {
+        background: linear-gradient(180deg, rgba(16, 42, 69, 0.9), rgba(12, 22, 35, 0.96));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .accordion-trigger {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background: transparent;
+        color: var(--white);
+        padding: 1.1rem 1.2rem;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+
+      .accordion-trigger .unit-range {
+        color: var(--cyan);
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .toggle-icon { position: relative; width: 20px; height: 20px; flex-shrink: 0; }
+      .toggle-icon::before, .toggle-icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 2px;
+        background: var(--white);
+        border-radius: 999px;
+        transform: translate(-50%, -50%);
+        transition: transform 0.25s ease;
+      }
+      .toggle-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+      .accordion-item.active .toggle-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+      .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+      .accordion-item.active .accordion-content { max-height: 1400px; }
+      .accordion-body { padding: 0 1.2rem 1.2rem; }
+
+      .week-list { display: grid; gap: 0.9rem; }
+      .week-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.75rem 1rem;
+        align-items: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+
+      .week-meta { display: flex; flex-direction: column; gap: 0.25rem; }
+      .week-meta .week-label {
+        color: var(--cyan);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .week-meta strong { font-size: 1.02rem; }
+      .week-item p { color: var(--muted); margin: 0; }
+
+      .practice-btn {
+        background: rgba(121, 40, 202, 0.12);
+        border: 1px solid rgba(121, 40, 202, 0.42);
+        color: var(--white);
+        padding: 0.7rem 1rem;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .placeholder-box {
+        padding: 1.05rem 1.1rem;
+        border-radius: 12px;
+        border: 1px dashed rgba(146, 179, 213, 0.26);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--muted);
+      }
+
+      @media (min-width: 700px) {
+        .nav-links { display: flex; }
+        .hero { padding-top: 4rem; }
+        .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+      }
+
+      @media (max-width: 699px) {
+        .metrics { grid-template-columns: 1fr; }
+        .course-header { flex-direction: column; align-items: flex-start; }
+        .week-item { grid-template-columns: 1fr; }
+        .practice-btn { width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <nav class="navbar container" aria-label="Navegación principal">
+        <a href="#inicio" class="brand" aria-label="Inicio">
+          <span class="brand-mark">U</span>
+          <span>UPLA</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#cursos">Mis Cursos</a>
+        </div>
+
+        <button class="login-btn" type="button">Login</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Universidad Peruana Los Andes</p>
+            <h1>CONDORI MORENO JOSHEP EMERSON</h1>
+
+            <div class="student-meta">
+              <span>Código: S03785C</span>
+              <span>Ingeniería de Sistemas y Computación</span>
+            </div>
+
+            <p class="tagline">
+              "Tecnología, aprendizaje y disciplina para construir nuevas oportunidades."
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-btn" href="#cursos">Explorar mis cursos</a>
+              <a class="secondary-btn" href="#unidades">Ver unidades</a>
+            </div>
+
+            <ul class="info-list">
+              <li>Asignatura: Algoritmos y Estructura de Datos</li>
+              <li>Universidad: Universidad Peruana Los Andes - UPLA</li>
+              <li>Perfil académico orientado al desarrollo, análisis y solución de problemas.</li>
+            </ul>
+          </div>
+
+          <aside class="profile-card" aria-label="Perfil del estudiante">
+            <div class="photo-frame">
+              <img
+                src="foto.png"
+                alt="Joshep Emerson Condori Moreno"
+                onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%230b192c%22/%3E%3Ccircle cx=%22150%22 cy=%22110%22 r=%2270%22 fill=%22%2300d2ff%22 opacity=%220.9%22/%3E%3Crect x=%2250%22 y=%22170%22 width=%22200%22 height=%2295%22 rx=%2245%22 fill=%22%237928ca%22 opacity=%220.9%22/%3E%3C/svg%3E';"
+              />
+            </div>
+
+            <div class="profile-details">
+              <div class="profile-row">
+                <span>Nombre</span>
+                <strong>Joshep Emerson</strong>
+              </div>
+              <div class="profile-row">
+                <span>Código</span>
+                <strong>S03785C</strong>
+              </div>
+              <div class="profile-row">
+                <span>Carrera</span>
+                <strong>Ingeniería de Sistemas y Computación</strong>
+              </div>
+              <div class="profile-row">
+                <span>Universidad</span>
+                <strong>UPLA</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="cursos" class="courses">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Portafolio Académico</p>
+            <h2>Mis cursos</h2>
+          </div>
+
+          <div class="metrics" aria-label="Métricas del curso">
+            <div class="metric-card">
+              <span class="value">02</span>
+              <span class="label">Cursos</span>
+            </div>
+            <div class="metric-card">
+              <span class="value">08</span>
+              <span class="label">Unidades</span>
+            </div>
+            <div class="metric-card">
+              <span class="value">16</span>
+              <span class="label">Semanas</span>
+            </div>
+          </div>
+
+          <article class="course-card">
+            <div class="course-header">
+              <div>
+                <p class="eyebrow">Curso actual</p>
+              </div>
+              <div class="course-badges">
+                <span>IV Ciclo</span>
+                <span>03 créditos</span>
+                <span>05 hrs semanales</span>
+              </div>
+            </div>
+
+            <h3>Algoritmos y Estructuras de Datos</h3>
+            <p>
+              Desarrollo de competencias para modelar soluciones computacionales eficientes,
+              comprender estructuras de datos y aplicar lógica algorítmica en la resolución
+              de problemas reales.
+            </p>
+
+            <ul class="course-details">
+              <li>
+                <strong>Docente</strong>
+                Curso académico de la Escuela Profesional de Ingeniería de Sistemas y Computación
+              </li>
+              <li>
+                <strong>Competencia</strong>
+                Analizar, diseñar y evaluar algoritmos con criterio de eficiencia y complejidad
+              </li>
+              <li>
+                <strong>Metodología</strong>
+                Prácticas, laboratorios, entregas semanales y desarrollo de aplicaciones conceptuales
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="unidades" class="units">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Plan de estudios</p>
+            <h2>Estructura del curso</h2>
+          </div>
+
+          <div class="accordion" aria-label="Acordeón de unidades académicas">
+            <div class="accordion-item active">
+              <button class="accordion-trigger" type="button" aria-expanded="true">
+                <span class="unit-title">Unidad I: Conceptos de Algoritmos y Estructuras de Datos</span>
+                <span class="unit-range">Semanas 01 - 04</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <div class="week-list">
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 01</span>
+                        <strong>Arreglos Bidimensionales</strong>
+                        <p>Actividad 1: Métodos con arreglos</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 02</span>
+                        <strong>Arreglos Paralelos y Arreglos de Objetos</strong>
+                        <p>Actividad 1: Métodos con matrices</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 03</span>
+                        <strong>ArrayList y Vector</strong>
+                        <p>Actividad 1: Registro de alumnos y promedio</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 04</span>
+                        <strong>LinkedList</strong>
+                        <p>Actividad 1: Gestión de alumnos y promedios</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span class="unit-title">Unidad II: Pilas, Colas y Recursividad</span>
+                <span class="unit-range">Semanas 05 - 08</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <div class="week-list">
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 05</span>
+                        <strong>Pilas</strong>
+                        <p>Actividad 01: Métodos con ArrayList</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 06</span>
+                        <strong>Colas</strong>
+                        <p>Actividad 01: Gestión de alumnos con pilas</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 07</span>
+                        <strong>Recursividad</strong>
+                        <p>Introducción a la recursividad</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 08</span>
+                        <strong>Recursividad Anidada</strong>
+                        <p>Aplicación de recursividad anidada</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span class="unit-title">Unidad III: Listas Enlazadas</span>
+                <span class="unit-range">Semanas 09 - 12</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <div class="week-list">
+                    <div class="placeholder-box">
+                      Contenedor listo para añadir temas, prácticas y entregas de laboratorio de listas enlazadas,
+                      nodos, doble enlace y operaciones de recorrido.
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 09</span>
+                        <strong>Conceptos básicos</strong>
+                        <p>Lista enlazada simple y operaciones iniciales</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 10</span>
+                        <strong>Inserción y eliminación</strong>
+                        <p>Práctica de gestión de nodos y listas</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 11</span>
+                        <strong>Recorrido y comprobación</strong>
+                        <p>Laboratorio de búsqueda y recorrido</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 12</span>
+                        <strong>Evaluación de listas</strong>
+                        <p>Entrega de práctica integradora</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span class="unit-title">Unidad IV: Árboles, Grafos, Ordenación y Búsqueda</span>
+                <span class="unit-range">Semanas 13 - 16</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <div class="week-list">
+                    <div class="placeholder-box">
+                      Contenedor listo para añadir temas y entregas de prácticas/laboratorios sobre árboles binarios,
+                      grafos, ordenación y búsqueda.
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 13</span>
+                        <strong>Árboles</strong>
+                        <p>Conceptos, recorrido y estructura básica</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 14</span>
+                        <strong>Grafos</strong>
+                        <p>Representación, recorridos y aplicación</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 15</span>
+                        <strong>Ordenación</strong>
+                        <p>Algoritmos de ordenamiento y análisis</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 16</span>
+                        <strong>Búsqueda</strong>
+                        <p>Entrega final y práctica integradora</p>
+                      </div>
+                      <a href="#" class="practice-btn">Ver Práctica / Código</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const accordionItems = document.querySelectorAll(".accordion-item");
+      const accordionButtons = document.querySelectorAll(".accordion-trigger");
+
+      accordionButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const currentItem = button.parentElement;
+
+          accordionItems.forEach((item) => {
+            const trigger = item.querySelector(".accordion-trigger");
+            item.classList.remove("active");
+            trigger.setAttribute("aria-expanded", "false");
+          });
+
+          currentItem.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+        });
+      });
+    </script>
+  </body>
+</html>
