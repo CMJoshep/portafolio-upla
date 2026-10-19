@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana 06 - consultarCima()</title>
+    <style>
+      :root {
+        --bg: #0b1d2d;
+        --bg-2: #0d2b45;
+        --panel: #0e2b42;
+        --panel-2: #123455;
+        --cyan: #23d7ff;
+        --cyan-2: #89e7ff;
+        --blue: #3c8cff;
+        --purple: #6c4ce6;
+        --green: #1fd59a;
+        --green-2: #dffef5;
+        --yellow: #f7d371;
+        --red: #ff7b7b;
+        --text: #f1f9ff;
+        --muted: #bdd9ec;
+        --card: #dfefff;
+        --dark-card: #071b2a;
+        --border: rgba(154, 203, 241, 0.3);
+        --shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #061a2a, #0d2337);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 28px 18px 60px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0e3e62, #0d2a49);
+        border: 3px solid rgba(113, 196, 255, 0.85);
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+        padding: 22px 26px;
+      }
+
+      .hero-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .stack {
+        width: 75px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 6px;
+        height: 72px;
+      }
+
+      .stack span {
+        display: block;
+        width: 16px;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, #e6fdff, #79d1ff);
+        border: 2px solid rgba(255, 255, 255, 0.45);
+      }
+
+      .stack span:nth-child(1) { height: 18%; }
+      .stack span:nth-child(2) { height: 32%; }
+      .stack span:nth-child(3) { height: 60%; }
+      .stack span:nth-child(4) { height: 86%; }
+
+      .title {
+        font-size: 2.3rem;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        color: white;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2ec9ff, #3d72ff);
+        color: white;
+        font-weight: 800;
+        border-radius: 18px;
+        padding: 12px 20px;
+        letter-spacing: 0.04em;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .subtitle {
+        margin-top: 14px;
+        font-size: 1.12rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .section {
+        margin-top: 26px;
+        border: 2px solid rgba(255,255,255,0.06);
+        background: rgba(255,255,255,0.02);
+        border-radius: 20px;
+        padding: 18px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: linear-gradient(180deg, #dfeeff, #d9ebff);
+        border-radius: 18px;
+        padding: 20px;
+        color: #0c2131;
+        box-shadow: var(--shadow);
+      }
+
+      .method-label {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 16px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        font-size: 1.15rem;
+        margin-bottom: 14px;
+        color: white;
+      }
+
+      .cyan-label { background: linear-gradient(135deg, #4ec8ff, #6399ff); }
+      .green-label { background: linear-gradient(135deg, #20d18b, #12b171); }
+      .purple-label { background: linear-gradient(135deg, #7b5de6, #5a4fc8); }
+
+      .card h3 {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .info-box {
+        min-height: 200px;
+      }
+
+      .info-box p {
+        font-size: 1.18rem;
+        line-height: 1.6;
+        color: #153a54;
+      }
+
+      .codebox {
+        background: #071a2a;
+        color: #ebf8ff;
+        border: 2px solid rgba(104, 182, 255, 0.5);
+        border-radius: 16px;
+        padding: 18px;
+        overflow: auto;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        min-height: 280px;
+      }
+
+      .kw { color: #7ad6ff; }
+      .str { color: #98e885; }
+      .var { color: #f7d57d; }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 14px;
+      }
+
+      .step {
+        background: linear-gradient(180deg, #dff0ff, #d7ebff);
+        border-radius: 18px;
+        padding: 20px;
+        color: #0d2032;
+        box-shadow: var(--shadow);
+      }
+
+      .step h4 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .step p {
+        line-height: 1.5;
+        color: #1a3550;
+      }
+
+      .pill {
+        display: inline-block;
+        background: #f0f7ff;
+        border: 2px solid rgba(17, 72, 115, 0.2);
+        color: #0d273d;
+        border-radius: 12px;
+        padding: 8px 12px;
+        font-weight: 700;
+        margin-top: 12px;
+      }
+
+      .stack-demo {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 120px;
+        margin-top: 14px;
+        background: rgba(255,255,255,0.25);
+        border-radius: 12px;
+        padding: 12px;
+        border: 1px solid rgba(0,0,0,0.08);
+      }
+
+      .stack-demo span {
+        flex: 1;
+        background: linear-gradient(180deg, #5cc4ff, #2c7ef8);
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+        color: white;
+        font-weight: 800;
+        padding-top: 10px;
+      }
+
+      .stack-demo span:nth-child(1) { height: 30%; }
+      .stack-demo span:nth-child(2) { height: 55%; }
+      .stack-demo span:nth-child(3) { height: 74%; }
+      .stack-demo span:nth-child(4) { height: 92%; }
+
+      .mini {
+        display: inline-block;
+        margin-top: 12px;
+        background: #e1f3ff;
+        border: 2px solid rgba(34, 95, 144, 0.25);
+        border-radius: 10px;
+        padding: 8px 12px;
+        font-weight: 700;
+        color: #103b5b;
+      }
+
+      .summary {
+        margin-top: 30px;
+        background: linear-gradient(135deg, #7e57f0, #5d7ef6);
+        border-radius: 18px;
+        border: 2px solid rgba(255,255,255,0.2);
+        color: white;
+        font-weight: 900;
+        padding: 18px 20px;
+        line-height: 1.5;
+        font-size: 1.25rem;
+      }
+
+      @media (max-width: 900px) {
+        .two-col, .steps { grid-template-columns: 1fr; }
+        .title { font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="stack" aria-label="Pila">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div>
+              <div style="font-size:1.1rem; color:#9fe3ff; font-weight:800;">Cima</div>
+              <div class="title">consultarCima()</div>
+            </div>
+          </div>
+          <div class="badge">Java</div>
+        </div>
+
+        <p class="subtitle">
+          Muestra la información del alumno ubicado en el tope sin extraerlo de la estructura.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="two-col">
+          <div class="card info-box">
+            <div class="method-label cyan-label">1 ¿Qué hace?</div>
+            <div class="stack-demo" aria-label="Pila en muestra">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p style="margin-top:16px;">
+              Muestra la información del alumno ubicado en el tope sin extraerlo de la estructura.
+            </p>
+          </div>
+
+          <div class="card" style="background:linear-gradient(180deg,#081d2d,#0d243c); color:#eefaff;">
+            <div class="method-label purple-label">2 Código del método</div>
+            <pre class="codebox"><span class="kw">public</span> <span class="kw">void</span> <span class="var">consultarCima</span>() {
+    <span class="kw">if</span> (estaVacia()) {
+        System.out.println(<span class="str">"La pila está vacía.\nNo hay elementos en la cima."</span>);
+        <span class="kw">return</span>;
+    }
+    System.out.println(<span class="str">"\n--- INFORMACIÓN DE LA CIMA ---"</span>);
+    System.out.println(arregloPila[top]);
+    System.out.println(<span class="str">"------------------------------"</span>);
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="method-label green-label">3 Paso a paso</div>
+        <div class="steps">
+          <div class="step">
+            <h4>1. Verifica</h4>
+            <p>Se llama al método <strong>estaVacia()</strong>. Si la pila no tiene elementos, se muestra un mensaje y termina el método.</p>
+            <div class="pill">Pila vacía</div>
+            <div style="margin-top:14px; background:#dfeeff; border-radius:12px; padding:12px; text-align:center; color:#12375a; font-weight:700;">
+              La pila está vacía.<br />No hay elementos en la cima.
+            </div>
+          </div>
+
+          <div class="step">
+            <h4>2. Accede al tope</h4>
+            <p>Si la pila tiene elementos, se accede directamente al índice <strong>top</strong> del arreglo para obtener el alumno que está en la cima.</p>
+            <div class="stack-demo">
+              <span style="height: 35%;">A</span>
+              <span style="height: 55%;">B</span>
+              <span style="height: 72%;">C</span>
+              <span style="height: 92%;">D</span>
+            </div>
+            <div class="mini">top → Alumno 3</div>
+          </div>
+
+          <div class="step">
+            <h4>3. Imprime</h4>
+            <p>Finalmente, se imprime la información del alumno en la cima y se muestra un separador.</p>
+            <div style="margin-top:14px; background:#dfefff; border:2px solid rgba(26,78,123,0.3); border-radius:12px; padding:12px; color:#12375a; font-weight:700;">
+              --- INFORMACIÓN DE LA CIMA ---<br />Alumno 3
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="summary">
+        consultarCima() verifica si la pila está vacía y, si tiene elementos, accede al índice top del arreglo para mostrar sus datos sin extraerlos.
+      </div>
+    </div>
+  </body>
+</html>
