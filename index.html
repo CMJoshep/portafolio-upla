@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portafolio académico universitario de Joshep Emerson Condori Moreno - Universidad Peruana Los Andes"
+      content="Portafolio académico universitario de Joshep Emerson Condori Moreno - UPLA"
     />
-    <title>UPLA | Portafolio Académico</title>
+    <title>Joshep Emerson | Portafolio UPLA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,53 +18,82 @@
 
     <style>
       :root {
-        --bg-900: #050b14;
-        --bg-800: #0b192c;
-        --panel: #102a45;
-        --panel-strong: #14375f;
-        --panel-soft: #1a3f63;
-        --line: rgba(146, 179, 213, 0.18);
-        --cyan: #00d2ff;
-        --violet: #7928ca;
+        --bg-900: #07121f;
+        --bg-800: #0d1d2d;
+        --bg-700: #12283b;
+        --panel: rgba(16, 35, 52, 0.9);
+        --panel-strong: rgba(19, 49, 70, 0.98);
+        --line: rgba(142, 182, 214, 0.18);
+        --cyan: #53d8ff;
+        --cyan-strong: #2cc8ff;
+        --violet: #8f5bff;
+        --purple: #b875ff;
         --text: #edf7ff;
-        --muted: #a8bdd8;
+        --muted: #b5cedf;
         --white: #ffffff;
-        --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-        --radius: 12px;
-        --radius-xl: 20px;
+        --shadow: 0 24px 60px rgba(4, 9, 17, 0.45);
+        --radius: 18px;
+        --radius-xl: 28px;
       }
 
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-family: "Inter", sans-serif;
         background:
-          radial-gradient(circle at top right, rgba(121, 40, 202, 0.16), transparent 28%),
-          radial-gradient(circle at left center, rgba(0, 210, 255, 0.18), transparent 22%),
+          radial-gradient(circle at top left, rgba(83, 216, 255, 0.14), transparent 22%),
+          radial-gradient(circle at right center, rgba(143, 91, 255, 0.18), transparent 24%),
           linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 100%);
         color: var(--text);
         line-height: 1.6;
       }
 
-      a { color: inherit; text-decoration: none; }
-      img { display: block; max-width: 100%; }
-      button { font: inherit; }
-      .container { width: min(1120px, calc(100% - 1.6rem)); margin: 0 auto; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 1.4rem));
+        margin: 0 auto;
+      }
+
       .eyebrow {
         color: var(--cyan);
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-size: 0.76rem;
         text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 800;
       }
-      h1, h2, h3, h4 { letter-spacing: -0.04em; line-height: 1.1; }
+
+      h1, h2, h3, h4 {
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+      }
 
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 20;
-        backdrop-filter: blur(12px);
-        background: rgba(5, 11, 20, 0.72);
+        z-index: 30;
+        backdrop-filter: blur(16px);
+        background: rgba(7, 18, 31, 0.7);
         border-bottom: 1px solid var(--line);
       }
 
@@ -72,51 +101,58 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 78px;
+        min-height: 80px;
         gap: 1rem;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.8rem;
         font-weight: 800;
-        font-size: 1.05rem;
         letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       .brand-logo {
-        width: 52px;
-        height: 52px;
-        display: grid;
-        place-items: center;
-        border-radius: 14px;
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
         overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .brand-logo img {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        padding: 4px;
+        padding: 5px;
       }
 
       .nav-links {
         display: none;
         align-items: center;
-        gap: 2rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
+        gap: 1.8rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--muted);
       }
 
-      .nav-links a { transition: color 0.25s ease; }
-      .nav-links a:hover { color: var(--white); }
+      .nav-links a {
+        transition: color 0.25s ease;
+      }
 
-      .login-btn, .primary-btn, .secondary-btn, .practice-btn {
+      .nav-links a:hover {
+        color: var(--white);
+      }
+
+      .nav-cta,
+      .primary-btn,
+      .secondary-btn,
+      .delivery-link,
+      .practice-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -126,104 +162,117 @@
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       }
 
-      .login-btn {
+      .nav-cta {
         padding: 0.8rem 1.2rem;
         background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         color: var(--white);
-        font-size: 0.76rem;
-        font-weight: 700;
+        font-size: 0.72rem;
+        font-weight: 800;
         letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      .login-btn:hover, .primary-btn:hover, .secondary-btn:hover, .practice-btn:hover {
+      .nav-cta:hover,
+      .primary-btn:hover,
+      .secondary-btn:hover,
+      .delivery-link:hover,
+      .practice-btn:hover {
         transform: translateY(-2px);
       }
 
-      .hero { padding: 3.5rem 0 2rem; }
-      .hero-grid { display: grid; gap: 1.5rem; }
-      .hero-copy { display: flex; flex-direction: column; justify-content: center; }
+      .hero {
+        padding: 4rem 0 2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+      }
+
       .hero-copy h1 {
-        font-size: clamp(2.2rem, 6vw, 4.1rem);
-        margin-top: 0.7rem;
-        margin-bottom: 1rem;
+        margin-top: 0.8rem;
+        font-size: clamp(2.6rem, 5.5vw, 4.8rem);
       }
 
       .student-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.8rem;
-        color: var(--muted);
-        font-size: 0.96rem;
-        margin-bottom: 0.9rem;
+        gap: 0.7rem;
+        margin: 1rem 0 1.2rem;
       }
 
       .student-meta span {
         display: inline-flex;
         align-items: center;
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 0.8rem;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
       }
 
       .tagline {
-        font-size: 1.1rem;
-        color: #dfeeff;
-        max-width: 720px;
+        max-width: 700px;
+        color: #ebf5ff;
+        font-size: 1.08rem;
         margin-bottom: 1.5rem;
-        font-weight: 500;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 0.9rem;
-        margin-bottom: 1.6rem;
+        margin-bottom: 1.5rem;
       }
 
       .primary-btn {
         background: linear-gradient(135deg, var(--cyan), var(--violet));
         color: var(--white);
-        font-weight: 700;
         padding: 1rem 1.5rem;
-        box-shadow: 0 0 26px rgba(0, 210, 255, 0.35);
+        box-shadow: 0 0 26px rgba(83, 216, 255, 0.38);
+        font-weight: 800;
       }
 
       .secondary-btn {
         background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         color: var(--white);
         padding: 1rem 1.5rem;
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .info-list {
         list-style: none;
         display: grid;
-        gap: 0.65rem;
-        color: var(--muted);
-        max-width: 560px;
+        gap: 0.7rem;
+        max-width: 640px;
       }
 
-      .info-list li { position: relative; padding-left: 1.5rem; }
+      .info-list li {
+        position: relative;
+        padding-left: 1.4rem;
+        color: var(--muted);
+      }
+
       .info-list li::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 0.62rem;
-        width: 0.56rem;
-        height: 0.56rem;
+        top: 0.7rem;
+        width: 0.55rem;
+        height: 0.55rem;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--cyan), var(--violet));
-        box-shadow: 0 0 18px rgba(0, 210, 255, 0.4);
+        box-shadow: 0 0 20px rgba(83, 216, 255, 0.4);
       }
 
       .profile-card {
         position: relative;
-        background: linear-gradient(180deg, rgba(16, 42, 69, 0.94), rgba(13, 29, 44, 0.9));
-        border: 1px solid rgba(146, 179, 213, 0.18);
+        background: linear-gradient(180deg, rgba(16, 35, 52, 0.95), rgba(10, 23, 33, 0.92));
+        border: 1px solid var(--line);
         border-radius: var(--radius-xl);
         box-shadow: var(--shadow);
         padding: 1.2rem;
@@ -233,19 +282,19 @@
         content: "";
         position: absolute;
         inset: -1px;
-        border-radius: inherit;
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.26), rgba(121, 40, 202, 0.18), transparent);
         z-index: -1;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(83, 216, 255, 0.25), rgba(143, 91, 255, 0.24), transparent 72%);
       }
 
       .photo-frame {
-        width: min(260px, 72vw);
+        width: min(280px, 72vw);
         aspect-ratio: 1;
-        margin: 0 auto 1rem;
+        margin: 0 auto 1.2rem;
         border-radius: 50%;
-        border: 3px solid rgba(0, 210, 255, 0.8);
-        box-shadow: 0 0 30px rgba(0, 210, 255, 0.32), 0 0 50px rgba(121, 40, 202, 0.22);
         overflow: hidden;
+        border: 3px solid rgba(83, 216, 255, 0.8);
+        box-shadow: 0 0 30px rgba(83, 216, 255, 0.26), 0 0 50px rgba(143, 91, 255, 0.2);
         background: rgba(255, 255, 255, 0.04);
       }
 
@@ -255,64 +304,165 @@
         object-fit: cover;
       }
 
-      .profile-details { display: grid; gap: 0.7rem; margin-top: 1rem; }
+      .profile-details {
+        display: grid;
+        gap: 0.75rem;
+      }
+
       .profile-row {
         display: flex;
         justify-content: space-between;
-        gap: 0.8rem;
+        align-items: center;
+        gap: 1rem;
         padding: 0.8rem 0.9rem;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.025);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.02);
         border: 1px solid var(--line);
       }
 
-      .profile-row span:first-child { color: var(--muted); }
-      .profile-row strong { color: var(--white); font-weight: 700; }
+      .profile-row span {
+        color: var(--muted);
+      }
 
-      .courses { padding: 2.5rem 0 1rem; }
-      .section-heading { margin-bottom: 1.5rem; }
+      .profile-row strong {
+        color: var(--white);
+        text-align: right;
+      }
+
+      .section {
+        padding: 2rem 0 1rem;
+      }
+
+      .section-header {
+        margin-bottom: 1.4rem;
+      }
+
+      .section-header h2 {
+        margin-top: 0.6rem;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+      }
+
       .metrics {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
       }
 
       .metric-card {
-        background: rgba(19, 41, 64, 0.9);
+        text-align: center;
+        padding: 1.3rem 1rem;
+        background: rgba(19, 39, 56, 0.9);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 1.2rem 0.8rem;
-        text-align: center;
         box-shadow: var(--shadow);
       }
 
       .metric-card .value {
         display: block;
-        font-size: clamp(1.5rem, 5vw, 2.3rem);
-        font-weight: 800;
+        font-size: clamp(1.7rem, 4vw, 2.5rem);
+        font-weight: 900;
         color: var(--white);
-        line-height: 1.1;
       }
 
       .metric-card .label {
         display: block;
-        font-size: 0.78rem;
+        margin-top: 0.25rem;
+        font-size: 0.76rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .deliveries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+      }
+
+      .delivery-card {
+        background: linear-gradient(180deg, rgba(16, 35, 52, 0.96), rgba(10, 20, 31, 0.96));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        padding: 1.2rem;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .delivery-tag {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        padding: 0.38rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(83, 216, 255, 0.1);
+        border: 1px solid rgba(83, 216, 255, 0.22);
+        color: var(--cyan);
+        font-size: 0.7rem;
+        font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+      }
+
+      .delivery-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .delivery-card p {
         color: var(--muted);
-        margin-top: 0.25rem;
+      }
+
+      .delivery-list {
+        list-style: none;
+        display: grid;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+
+      .delivery-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.7rem;
+        padding: 0.6rem 0.7rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+      }
+
+      .delivery-list span:last-child {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      .delivery-link {
+        margin-top: 0.4rem;
+        background: rgba(143, 91, 255, 0.12);
+        border: 1px solid rgba(143, 91, 255, 0.38);
+        color: var(--white);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.8rem 1rem;
+      }
+
+      .courses-grid {
+        display: grid;
+        gap: 1rem;
       }
 
       .course-card {
-        background: linear-gradient(180deg, rgba(16, 42, 69, 0.95), rgba(11, 25, 44, 0.92));
+        background: linear-gradient(180deg, rgba(16, 35, 52, 0.96), rgba(10, 21, 31, 0.96));
         border: 1px solid var(--line);
         border-radius: var(--radius-xl);
         box-shadow: var(--shadow);
-        padding: 1.3rem;
+        padding: 1.4rem;
       }
 
-      .course-header {
+      .course-head {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -320,38 +470,41 @@
         margin-bottom: 1rem;
       }
 
-      .course-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      .course-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
       .course-badges span {
         display: inline-flex;
         align-items: center;
-        padding: 0.45rem 0.7rem;
+        padding: 0.42rem 0.7rem;
         border-radius: 999px;
-        background: rgba(0, 210, 255, 0.08);
-        border: 1px solid rgba(0, 210, 255, 0.18);
+        background: rgba(83, 216, 255, 0.08);
+        border: 1px solid rgba(83, 216, 255, 0.2);
         color: var(--cyan);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
       .course-card h3 {
-        font-size: clamp(1.6rem, 4vw, 2.5rem);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
       }
 
       .course-card > p {
         color: var(--muted);
         margin-bottom: 1rem;
-        max-width: 760px;
       }
 
       .course-details {
+        list-style: none;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 0.8rem;
-        list-style: none;
-        margin-top: 1rem;
       }
 
       .course-details li {
@@ -365,13 +518,20 @@
       .course-details strong {
         display: block;
         color: var(--white);
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.25rem;
       }
 
-      .units { padding: 2.5rem 0 4rem; }
-      .accordion { display: grid; gap: 1rem; }
+      .units {
+        padding-bottom: 4rem;
+      }
+
+      .accordion {
+        display: grid;
+        gap: 1rem;
+      }
+
       .accordion-item {
-        background: linear-gradient(180deg, rgba(16, 42, 69, 0.9), rgba(12, 22, 35, 0.96));
+        background: linear-gradient(180deg, rgba(17, 35, 54, 0.96), rgba(10, 18, 28, 0.96));
         border: 1px solid var(--line);
         border-radius: var(--radius-xl);
         overflow: hidden;
@@ -384,148 +544,204 @@
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        background: transparent;
-        color: var(--white);
         padding: 1.1rem 1.2rem;
+        background: transparent;
         border: none;
+        color: var(--white);
         text-align: left;
         cursor: pointer;
-        font-size: 1.02rem;
+        font-size: 1.04rem;
         font-weight: 700;
       }
 
-      .accordion-trigger .unit-range {
+      .unit-range {
         color: var(--cyan);
-        font-size: 0.8rem;
-        letter-spacing: 0.06em;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         white-space: nowrap;
       }
 
-      .toggle-icon { position: relative; width: 20px; height: 20px; flex-shrink: 0; }
-      .toggle-icon::before, .toggle-icon::after {
+      .toggle-icon {
+        position: relative;
+        width: 18px;
+        height: 18px;
+      }
+
+      .toggle-icon::before,
+      .toggle-icon::after {
         content: "";
         position: absolute;
         top: 50%;
         left: 50%;
         width: 12px;
         height: 2px;
-        background: var(--white);
         border-radius: 999px;
+        background: var(--white);
         transform: translate(-50%, -50%);
         transition: transform 0.25s ease;
       }
-      .toggle-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
-      .accordion-item.active .toggle-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
 
-      .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-      .accordion-item.active .accordion-content { max-height: 1800px; }
-      .accordion-body { padding: 0 1.2rem 1.2rem; }
+      .toggle-icon::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
 
-      .week-list { display: grid; gap: 0.9rem; }
+      .accordion-item.active .toggle-icon::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+
+      .accordion-item.active .accordion-content {
+        max-height: 1800px;
+      }
+
+      .accordion-body {
+        padding: 0 1.2rem 1.2rem;
+      }
+
+      .week-list {
+        display: grid;
+        gap: 0.9rem;
+      }
+
       .week-item {
         display: grid;
         grid-template-columns: 1fr auto;
-        gap: 0.75rem 1rem;
+        gap: 0.8rem 1rem;
         align-items: center;
         padding: 1rem;
+        border-radius: 14px;
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid var(--line);
-        border-radius: 12px;
       }
 
-      .week-meta { display: flex; flex-direction: column; gap: 0.25rem; }
-      .week-meta .week-label {
+      .week-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .week-label {
         color: var(--cyan);
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
-      .week-meta strong { font-size: 1.02rem; }
-      .week-item p { color: var(--muted); margin: 0; }
+
+      .week-meta strong {
+        font-size: 1.08rem;
+      }
 
       .activity-list {
         list-style: none;
         display: grid;
-        gap: 0.5rem;
-        margin-top: 0.35rem;
+        gap: 0.45rem;
+        margin-top: 0.5rem;
       }
 
       .activity-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 0.7rem;
-        padding: 0.55rem 0.7rem;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        padding: 0.6rem 0.7rem;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.025);
-        border: 1px solid rgba(146, 179, 213, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.04);
         color: var(--muted);
-        flex-wrap: wrap;
       }
 
       .activity-badge {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 98px;
-        padding: 0.3rem 0.55rem;
+        min-width: 108px;
+        padding: 0.28rem 0.6rem;
         border-radius: 999px;
-        background: rgba(0, 210, 255, 0.1);
-        border: 1px solid rgba(0, 210, 255, 0.2);
+        background: rgba(83, 216, 255, 0.1);
+        border: 1px solid rgba(83, 216, 255, 0.18);
         color: var(--cyan);
-        font-size: 0.68rem;
+        font-size: 0.64rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
       .activity-tag {
         display: inline-flex;
         align-items: center;
-        padding: 0.2rem 0.5rem;
+        padding: 0.22rem 0.55rem;
         border-radius: 999px;
-        background: rgba(121, 40, 202, 0.14);
-        border: 1px solid rgba(121, 40, 202, 0.3);
-        color: #d9c7ff;
+        background: rgba(143, 91, 255, 0.12);
+        border: 1px solid rgba(143, 91, 255, 0.26);
+        color: #dbcaff;
         font-size: 0.62rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
+        font-weight: 800;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
       .practice-btn {
-        background: rgba(121, 40, 202, 0.12);
-        border: 1px solid rgba(121, 40, 202, 0.42);
+        background: rgba(143, 91, 255, 0.12);
+        border: 1px solid rgba(143, 91, 255, 0.4);
         color: var(--white);
         padding: 0.7rem 1rem;
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        white-space: nowrap;
       }
 
-      .placeholder-box {
-        padding: 1.05rem 1.1rem;
-        border-radius: 12px;
-        border: 1px dashed rgba(146, 179, 213, 0.26);
-        background: rgba(255, 255, 255, 0.02);
+      footer {
+        padding: 1.4rem 0 2.5rem;
         color: var(--muted);
       }
 
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        padding-top: 1.2rem;
+      }
+
       @media (min-width: 700px) {
-        .nav-links { display: flex; }
-        .hero { padding-top: 4rem; }
-        .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+        .nav-links {
+          display: flex;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1.15fr 0.85fr;
+        }
       }
 
       @media (max-width: 699px) {
-        .metrics { grid-template-columns: 1fr; }
-        .course-header { flex-direction: column; align-items: flex-start; }
-        .week-item { grid-template-columns: 1fr; }
-        .practice-btn { width: 100%; }
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .course-head,
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .week-item {
+          grid-template-columns: 1fr;
+        }
+
+        .practice-btn,
+        .delivery-link {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -542,10 +758,12 @@
 
         <div class="nav-links">
           <a href="#inicio">Inicio</a>
-          <a href="#cursos">Mis Cursos</a>
+          <a href="#entregas">Entregas</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#unidades">Unidades</a>
         </div>
 
-        <button class="login-btn" type="button">Login</button>
+        <button class="nav-cta" type="button">Login</button>
       </nav>
     </header>
 
@@ -554,7 +772,7 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Universidad Peruana Los Andes</p>
-            <h1>CONDORI MORENO JOSHEP EMERSON</h1>
+            <h1>Joshep Emerson<br />Condori Moreno</h1>
 
             <div class="student-meta">
               <span>Código: S03785C</span>
@@ -562,28 +780,24 @@
             </div>
 
             <p class="tagline">
-              "Tecnología, aprendizaje y disciplina para construir nuevas oportunidades."
+              “Tecnología, aprendizaje y disciplina para construir soluciones útiles y crear nuevas oportunidades.”
             </p>
 
             <div class="hero-actions">
-              <a class="primary-btn" href="#cursos">Explorar mis cursos</a>
-              <a class="secondary-btn" href="#unidades">Ver unidades</a>
+              <a class="primary-btn" href="#entregas">Ver mis entregas</a>
+              <a class="secondary-btn" href="#unidades">Explorar unidades</a>
             </div>
 
             <ul class="info-list">
               <li>Asignatura: Algoritmos y Estructura de Datos</li>
               <li>Universidad: Universidad Peruana Los Andes - UPLA</li>
-              <li>Perfil académico orientado al desarrollo, análisis y solución de problemas.</li>
+              <li>Perfil académico enfocado en análisis, lógica y resolución de problemas.</li>
             </ul>
           </div>
 
           <aside class="profile-card" aria-label="Perfil del estudiante">
             <div class="photo-frame">
-              <img
-                src="foto.png.jpg"
-                alt="Joshep Emerson Condori Moreno"
-                onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22%3E%3Crect width=%22300%22 height=%22300%22 fill=%22%230d1b2a%22/%3E%3Ccircle cx=%22150%22 cy=%22110%22 r=%2275%22 fill=%22%2300d2ff%22/%3E%3Crect x=%2260%22 y=%22180%22 width=%22180%22 height=%2270%22 rx=%2210%22 fill=%22%237928ca%22/%3E%3C/svg%3E';"
-              />
+              <img src="foto.png.jpg" alt="Joshep Emerson Condori Moreno" />
             </div>
 
             <div class="profile-details">
@@ -608,20 +822,20 @@
         </div>
       </section>
 
-      <section id="cursos" class="courses">
+      <section id="entregas" class="section">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Portafolio Académico</p>
-            <h2>Mis cursos</h2>
+          <div class="section-header">
+            <p class="eyebrow">Portafolio académico</p>
+            <h2>Mis entregas</h2>
           </div>
 
-          <div class="metrics" aria-label="Métricas del curso">
+          <div class="metrics" aria-label="Estadísticas del curso">
             <div class="metric-card">
-              <span class="value">02</span>
-              <span class="label">Cursos</span>
+              <span class="value">06</span>
+              <span class="label">Entregas</span>
             </div>
             <div class="metric-card">
-              <span class="value">08</span>
+              <span class="value">04</span>
               <span class="label">Unidades</span>
             </div>
             <div class="metric-card">
@@ -630,46 +844,125 @@
             </div>
           </div>
 
-          <article class="course-card">
-            <div class="course-header">
-              <div>
-                <p class="eyebrow">Curso actual</p>
-              </div>
-              <div class="course-badges">
-                <span>IV Ciclo</span>
-                <span>03 créditos</span>
-                <span>05 hrs semanales</span>
-              </div>
-            </div>
+          <div class="deliveries-grid">
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 01</span>
+              <h3>Arreglos bidimensionales</h3>
+              <p>Introducción a la organización de datos en tablas y análisis de patrones.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Infografía</span></li>
+                <li><span>Práctica</span><span>Ejercicios</span></li>
+              </ul>
+              <a href="#" class="delivery-link">Ver entrega</a>
+            </article>
 
-            <h3>Algoritmos y Estructuras de Datos</h3>
-            <p>
-              Desarrollo de competencias para modelar soluciones computacionales eficientes,
-              comprender estructuras de datos y aplicar lógica algorítmica en la resolución
-              de problemas reales.
-            </p>
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 02</span>
+              <h3>Arreglos paralelos</h3>
+              <p>Relación entre múltiples arreglos para representar información compleja.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Guía</span></li>
+                <li><span>Práctica</span><span>Aplicación</span></li>
+              </ul>
+              <a href="#" class="delivery-link">Ver entrega</a>
+            </article>
 
-            <ul class="course-details">
-              <li>
-                <strong>Docente</strong>
-                Curso académico de la Escuela Profesional de Ingeniería de Sistemas y Computación
-              </li>
-              <li>
-                <strong>Competencia</strong>
-                Analizar, diseñar y evaluar algoritmos con criterio de eficiencia y complejidad
-              </li>
-              <li>
-                <strong>Metodología</strong>
-                Prácticas, laboratorios, entregas semanales y desarrollo de aplicaciones conceptuales
-              </li>
-            </ul>
-          </article>
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 03</span>
+              <h3>ArrayList y Vector</h3>
+              <p>Uso de estructuras dinámicas para gestionar registros y datos académicos.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Laboratorio</span></li>
+                <li><span>Práctica</span><span>Registro</span></li>
+              </ul>
+              <a href="#" class="delivery-link">Ver entrega</a>
+            </article>
+
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 04</span>
+              <h3>LinkedList</h3>
+              <p>Modelado de secuencias enlazadas para mejorar la administración de datos.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Comparación</span></li>
+                <li><span>Práctica</span><span>Gestión</span></li>
+              </ul>
+              <a href="#" class="delivery-link">Ver entrega</a>
+            </article>
+
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 05</span>
+              <h3>Pilas</h3>
+              <p>Aplicación de la lógica LIFO en ejercicios de procesamiento y validación.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Práctica</span></li>
+                <li><span>Práctica</span><span>Validación</span></li>
+              </ul>
+              <a href="#" class="delivery-link">Ver entrega</a>
+            </article>
+
+            <article class="delivery-card">
+              <span class="delivery-tag">Semana 06</span>
+              <h3>Colas</h3>
+              <p>Organización FIFO para resolver problemas de atención, orden y flujo.</p>
+              <ul class="delivery-list">
+                <li><span>Actividad</span><span>Infografía</span></li>
+                <li><span>Práctica</span><span>Gestión</span></li>
+              </ul>
+              <a href="practicas/semana-06.html" class="delivery-link">Ver entrega</a>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="unidades" class="units">
+      <section id="cursos" class="section">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-header">
+            <p class="eyebrow">Cursos</p>
+            <h2>Mi formación académica</h2>
+          </div>
+
+          <div class="courses-grid">
+            <article class="course-card">
+              <div class="course-head">
+                <div>
+                  <p class="eyebrow">Curso actual</p>
+                </div>
+                <div class="course-badges">
+                  <span>IV ciclo</span>
+                  <span>03 créditos</span>
+                  <span>05h semanales</span>
+                </div>
+              </div>
+
+              <h3>Algoritmos y Estructuras de Datos</h3>
+              <p>
+                Desarrollo de competencias para modelar soluciones computacionales eficientes,
+                comprender estructuras de datos y aplicar lógica algorítmica en la resolución
+                de problemas reales.
+              </p>
+
+              <ul class="course-details">
+                <li>
+                  <strong>Docente</strong>
+                  Escuela Profesional de Ingeniería de Sistemas y Computación
+                </li>
+                <li>
+                  <strong>Competencia</strong>
+                  Analizar, diseñar y evaluar algoritmos con criterio de eficiencia
+                </li>
+                <li>
+                  <strong>Metodología</strong>
+                  Prácticas, laboratorios y entregas semanales
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="unidades" class="units section">
+        <div class="container">
+          <div class="section-header">
             <p class="eyebrow">Plan de estudios</p>
             <h2>Estructura del curso</h2>
           </div>
@@ -677,7 +970,7 @@
           <div class="accordion" aria-label="Acordeón de unidades académicas">
             <div class="accordion-item active">
               <button class="accordion-trigger" type="button" aria-expanded="true">
-                <span class="unit-title">Unidad I: Conceptos de Algoritmos y Estructuras de Datos</span>
+                <span>Unidad I: Conceptos de algoritmos y estructuras de datos</span>
                 <span class="unit-range">Semanas 01 - 04</span>
                 <span class="toggle-icon" aria-hidden="true"></span>
               </button>
@@ -688,27 +981,27 @@
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 01</span>
-                        <strong>Arreglos Bidimensionales</strong>
+                        <strong>Arreglos bidimensionales</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Ejercicios de práctica</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Refuerzo y retroalimentación</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Ejercicios</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Retroalimentación</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 02</span>
-                        <strong>Arreglos Paralelos y Arreglos de Objetos</strong>
+                        <strong>Arreglos paralelos y objetos</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Uso de datos paralelos</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación real</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -716,12 +1009,12 @@
                         <span class="week-label">Semana 03</span>
                         <strong>ArrayList y Vector</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Registro de alumnos</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Promedio y análisis</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -729,12 +1022,12 @@
                         <span class="week-label">Semana 04</span>
                         <strong>LinkedList</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de alumnos</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Comparación de estructuras</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
                   </div>
                 </div>
@@ -743,7 +1036,7 @@
 
             <div class="accordion-item">
               <button class="accordion-trigger" type="button" aria-expanded="false">
-                <span class="unit-title">Unidad II: Pilas, Colas y Recursividad</span>
+                <span>Unidad II: Pilas, colas y recursividad</span>
                 <span class="unit-range">Semanas 05 - 08</span>
                 <span class="toggle-icon" aria-hidden="true"></span>
               </button>
@@ -756,12 +1049,12 @@
                         <span class="week-label">Semana 05</span>
                         <strong>Pilas</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Métodos con ArrayList</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Ejercicios de validación</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Validación</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -769,12 +1062,12 @@
                         <span class="week-label">Semana 06</span>
                         <strong>Colas</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de alumnos</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Evaluación y conclusiones</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Evaluación</span></li>
                         </ul>
                       </div>
-                      <a href="practicas/semana-06.html" class="practice-btn">Ver Práctica</a>
+                      <a href="practicas/semana-06.html" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -782,25 +1075,25 @@
                         <span class="week-label">Semana 07</span>
                         <strong>Recursividad</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Introducción a la recursión</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Introducción</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Práctica guiada</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 08</span>
-                        <strong>Recursividad Anidada</strong>
+                        <strong>Recursividad anidada</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Aplicación recursiva</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Resolución de casos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Casos</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
                   </div>
                 </div>
@@ -809,7 +1102,7 @@
 
             <div class="accordion-item">
               <button class="accordion-trigger" type="button" aria-expanded="false">
-                <span class="unit-title">Unidad III: Listas Enlazadas</span>
+                <span>Unidad III: Listas enlazadas</span>
                 <span class="unit-range">Semanas 09 - 12</span>
                 <span class="toggle-icon" aria-hidden="true"></span>
               </button>
@@ -817,22 +1110,17 @@
               <div class="accordion-content">
                 <div class="accordion-body">
                   <div class="week-list">
-                    <div class="placeholder-box">
-                      Contenedor listo para añadir temas, prácticas y entregas de laboratorio de listas enlazadas,
-                      nodos, doble enlace y operaciones de recorrido.
-                    </div>
-
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 09</span>
                         <strong>Conceptos básicos</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Lista enlazada simple</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Lista simple</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Operaciones iniciales</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -840,12 +1128,12 @@
                         <span class="week-label">Semana 10</span>
                         <strong>Inserción y eliminación</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Gestión de nodos</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Validación de lista</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Validación</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -853,12 +1141,12 @@
                         <span class="week-label">Semana 11</span>
                         <strong>Recorrido y comprobación</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Búsqueda y recorrido</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Laboratorio práctico</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Laboratorio</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -866,12 +1154,12 @@
                         <span class="week-label">Semana 12</span>
                         <strong>Evaluación de listas</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Prueba de ejercicios</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Entrega integradora</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
                   </div>
                 </div>
@@ -880,7 +1168,7 @@
 
             <div class="accordion-item">
               <button class="accordion-trigger" type="button" aria-expanded="false">
-                <span class="unit-title">Unidad IV: Árboles, Grafos, Ordenación y Búsqueda</span>
+                <span>Unidad IV: Árboles, grafos, ordenación y búsqueda</span>
                 <span class="unit-range">Semanas 13 - 16</span>
                 <span class="toggle-icon" aria-hidden="true"></span>
               </button>
@@ -888,22 +1176,17 @@
               <div class="accordion-content">
                 <div class="accordion-body">
                   <div class="week-list">
-                    <div class="placeholder-box">
-                      Contenedor listo para añadir temas y entregas de prácticas/laboratorios sobre árboles binarios,
-                      grafos, ordenación y búsqueda.
-                    </div>
-
                     <div class="week-item">
                       <div class="week-meta">
                         <span class="week-label">Semana 13</span>
                         <strong>Árboles</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Recorridos básicos</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Recorridos</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Práctica estructural</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -911,12 +1194,12 @@
                         <span class="week-label">Semana 14</span>
                         <strong>Grafos</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Representación y recorridos</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación práctica</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Representación</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -924,12 +1207,12 @@
                         <span class="week-label">Semana 15</span>
                         <strong>Ordenación</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Algoritmos de ordenamiento</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Algoritmos</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Análisis comparativo</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -937,12 +1220,12 @@
                         <span class="week-label">Semana 16</span>
                         <strong>Búsqueda</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías del tema</span><span class="activity-tag">Subir</span></li>
+                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Algoritmos de búsqueda</span></li>
                           <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Entrega final</span></li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver Práctica</a>
+                      <a href="#" class="practice-btn">Ver práctica</a>
                     </div>
                   </div>
                 </div>
@@ -953,6 +1236,13 @@
       </section>
     </main>
 
+    <footer>
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Joshep Emerson Condori Moreno</p>
+        <p>UPLA • Ingeniería de Sistemas y Computación</p>
+      </div>
+    </footer>
+
     <script>
       const accordionItems = document.querySelectorAll(".accordion-item");
       const accordionButtons = document.querySelectorAll(".accordion-trigger");
@@ -960,15 +1250,19 @@
       accordionButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const currentItem = button.parentElement;
+
           accordionItems.forEach((item) => {
             const trigger = item.querySelector(".accordion-trigger");
             item.classList.remove("active");
             trigger.setAttribute("aria-expanded", "false");
           });
+
           currentItem.classList.add("active");
           button.setAttribute("aria-expanded", "true");
         });
       });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
