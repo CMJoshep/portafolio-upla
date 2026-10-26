@@ -230,7 +230,7 @@
       .course-head { display:flex; justify-content: space-between; align-items:center; gap:1rem; margin-bottom:1rem; }
       .course-badges { display:flex; flex-wrap:wrap; gap:.5rem; }
       .course-badges span {
-        display:inline-flex; align-items:center; padding:.4rem .7rem; border-radius:999px; background: rgba(83,216,255,.08); border:1px solid rgba(83,216,255,.2); color: var(--cyan); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+        display:inline-flex; align-items:center; padding:.4rem .7rem; border-radius:999px; background: rgba(83,216,255,.08); border:1px solid rgba(83,216,255,.2); color: var(--cyan); font-size: .72rem; font-weight: 700;
       }
       .course-card h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: .5rem; }
       .course-card > p { color: var(--muted); margin-bottom: 1rem; }
@@ -293,15 +293,51 @@
       .week-meta strong { font-size: 1.08rem; }
       .activity-list { list-style:none; display:grid; gap:.45rem; margin-top:.5rem; }
       .activity-item {
+        display:block;
+        background: rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.05); padding: .9rem; border-radius: 12px; color: var(--muted);
+      }
+      .activity-preview {
+        margin-bottom: .75rem;
+        border: 1px solid rgba(83,216,255,.2);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255,255,255,.02);
+      }
+      .activity-preview-header {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:.75rem;
+        padding: .55rem .7rem;
+        background: rgba(83,216,255,.08);
+        color: var(--cyan);
+        font-size: .62rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .activity-preview-header a {
+        color: var(--white);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 999px;
+        padding: .28rem .55rem;
+      }
+      .activity-preview iframe {
+        display:block;
+        width:100%;
+        height: 160px;
+        border:0;
+        background: #fff;
+      }
+      .activity-footer {
         display:flex; justify-content:space-between; align-items:center; gap:.8rem; flex-wrap:wrap;
-        background: rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.05); padding: .6rem .7rem; border-radius: 10px; color: var(--muted);
       }
       .activity-main { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; }
       .activity-badge {
-        display:inline-flex; align-items:center; justify-content:center; min-width:108px; padding:.28rem .6rem; border-radius:999px; background: rgba(83,216,255,.1); border: 1px solid rgba(83,216,255,.18); color: var(--cyan); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+        display:inline-flex; align-items:center; justify-content:center; min-width:108px; padding:.28rem .6rem; border-radius:999px; background: rgba(83,216,255,.1); border: 1px solid rgba(83,216,255,.24); color: var(--cyan); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
       }
       .activity-tag {
-        display:inline-flex; align-items:center; padding:.22rem .55rem; border-radius:999px; background: rgba(143,91,255,.08); border: 1px solid rgba(143,91,255,.22); color:#dbcaff; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+        display:inline-flex; align-items:center; padding:.22rem .55rem; border-radius:999px; background: rgba(143,91,255,.08); border: 1px solid rgba(143,91,255,.22); color:#dbcaff; font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
       }
       .activity-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
       .action-btn {
@@ -333,7 +369,7 @@
         .week-item { grid-template-columns: 1fr; }
         .course-head, .footer-inner { flex-direction: column; align-items: flex-start; }
         .practice-btn, .delivery-link, .action-btn { width: 100%; }
-        .activity-item { align-items: flex-start; }
+        .activity-footer { align-items: flex-start; }
       }
     </style>
   </head>
@@ -777,6 +813,35 @@
             button.setAttribute('aria-expanded', 'true');
           }
         });
+      });
+
+      document.querySelectorAll('.activity-item').forEach((item) => {
+        const main = item.querySelector('.activity-main');
+        const actions = item.querySelector('.activity-actions');
+        const viewLink = item.querySelector('.action-btn.view');
+
+        if (!main || !actions || !viewLink) return;
+
+        const href = viewLink.getAttribute('href');
+        const title = main.querySelector('.activity-badge')?.textContent || 'Actividad';
+
+        const preview = document.createElement('div');
+        preview.className = 'activity-preview';
+        preview.innerHTML = `
+          <div class="activity-preview-header">
+            <span>Vista previa</span>
+            <a href="${href}" target="_blank" rel="noopener noreferrer">Abrir</a>
+          </div>
+          <iframe src="${href}" title="${title} - vista previa" loading="lazy"></iframe>
+        `;
+
+        item.insertBefore(preview, main);
+
+        const footer = document.createElement('div');
+        footer.className = 'activity-footer';
+        footer.appendChild(main);
+        footer.appendChild(actions);
+        item.appendChild(footer);
       });
     </script>
   </body>
