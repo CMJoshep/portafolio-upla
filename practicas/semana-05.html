@@ -3,53 +3,739 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semana 05 | Portafolio UPLA</title>
+    <title>Semana 05 | Métodos de la actividad 2</title>
     <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        background: linear-gradient(180deg, #07121f, #0d1d2d);
-        color: #edf7ff;
+      :root {
+        --bg1: #071b2d;
+        --bg2: #0b2a48;
+        --panel: #eaf7fb;
+        --card: #f0f9ff;
+        --primary: #1a7ae0;
+        --primary-2: #33c5ff;
+        --cyan: #37d8ff;
+        --green: #28d17c;
+        --green-dark: #0ea65c;
+        --purple: #7c4dff;
+        --purple-2: #c18cff;
+        --orange: #ffb000;
+        --danger: #ff4d4d;
+        --text: #0b1d2d;
+        --muted: #5a6d7b;
+        --navy: #0a2340;
+        --line: #b7d9ec;
+        --shadow: 0 18px 40px rgba(10, 27, 45, 0.18);
       }
-      main {
-        max-width: 900px;
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #041a2b, #0a2a42 45%, #0b1e2c 100%);
+        color: var(--text);
+      }
+      a { text-decoration: none; }
+      .page {
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 3rem 1.25rem 4rem;
+        padding: 32px 18px 52px;
+      }
+      .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 18px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        color: #fff;
+        font-size: 0.72rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: linear-gradient(135deg, var(--cyan), var(--primary));
+        color: white;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-size: .72rem;
+        box-shadow: var(--shadow);
+      }
+      .week {
+        background: linear-gradient(180deg, rgba(15, 44, 70, 0.95), rgba(11, 26, 41, 0.96));
+        border: 2px solid rgba(95, 196, 255, 0.7);
+        border-radius: 26px;
+        box-shadow: 0 20px 45px rgba(4, 9, 17, 0.35);
+        overflow: hidden;
+      }
+      .week-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 26px;
+        background: linear-gradient(90deg, rgba(30, 102, 160, 0.35), rgba(35, 69, 102, 0.9));
+      }
+      .title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .stack-icon {
+        width: 74px;
+        height: 126px;
+        background: linear-gradient(180deg, #5ecaf4, #2b83d8);
+        border-radius: 14px;
+        position: relative;
+        border: 2px solid rgba(255,255,255,.2);
+      }
+      .stack-icon::before, .stack-icon::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        height: 12px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.85);
+      }
+      .stack-icon::before { top: 16px; }
+      .stack-icon::after { top: 38px; }
+      .stack-icon .mini {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 62px;
+        bottom: 14px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.32);
+        border: 2px solid rgba(255,255,255,.2);
+      }
+      .week h1 {
+        margin: 0;
+        color: white;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+      .java-pill {
+        min-width: 120px;
+        height: 56px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #dff9ff, #b9d9ff);
+        border: 2px solid rgba(255,255,255,.35);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 1.1rem;
+        color: var(--navy);
+      }
+      .java-pill:before {
+        content: "☕";
+        font-size: 1.8rem;
+        margin-right: 6px;
+      }
+      .module {
+        padding: 20px 18px 2px;
+      }
+      .module-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 18px;
+        margin-bottom: 18px;
       }
       .card {
-        background: rgba(16,35,52,.95);
-        border: 1px solid rgba(142,182,214,.18);
-        border-radius: 24px;
-        box-shadow: 0 18px 40px rgba(4, 9, 17, 0.35);
-        padding: 2rem;
+        background: #dfeef7;
+        border: 3px solid rgba(48, 95, 146, 0.7);
+        border-radius: 22px;
+        padding: 18px 22px;
+        box-shadow: var(--shadow);
       }
-      h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: .8rem; }
-      p { color: #b5cedf; line-height: 1.7; }
-      .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top: 1.5rem; }
-      .btn {
-        display: inline-flex; align-items:center; justify-content:center; padding: .85rem 1.2rem; border-radius: 999px; text-decoration:none; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .7rem;
+      .card h3 {
+        margin: 0;
+        font-size: clamp(1.4rem, 3vw, 2.2rem);
       }
-      .primary { background: linear-gradient(135deg, #53d8ff, #8f5bff); color: #fff; }
-      .secondary { background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.12); color: #fff; }
-      ul { color: #b5cedf; margin-left: 1.2rem; }
+      .card .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 900;
+        margin-right: 12px;
+      }
+      .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .card-header strong {
+        color: #0a2236;
+        font-size: 1.1rem;
+      }
+      .section-legend {
+        padding: 18px 16px 20px;
+        border-radius: 18px;
+        background: rgba(255,255,255,.25);
+        border: 2px solid rgba(56, 125, 175, 0.35);
+      }
+      .icon-box {
+        width: 150px;
+        height: 120px;
+        border-radius: 18px;
+        border: 3px solid rgba(18, 79, 146, 0.8);
+        background: linear-gradient(180deg, #e9f5ff, #d4eaf8);
+        margin: 0 auto 16px;
+        position: relative;
+      }
+      .icon-box .user {
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        transform: translateX(-50%);
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        border: 4px solid #3e7fe8;
+      }
+      .icon-box .user:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #3e7fe8;
+      }
+      .icon-box .user:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 34px;
+        transform: translateX(-50%);
+        width: 34px;
+        height: 24px;
+        border-radius: 18px 18px 0 0;
+        background: #3e7fe8;
+      }
+      .icon-box .search {
+        position: absolute;
+        right: 28px;
+        bottom: 18px;
+        width: 26px;
+        height: 26px;
+        border: 5px solid #3e7fe8;
+        border-radius: 50%;
+      }
+      .icon-box .search:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 4px;
+        background: #3e7fe8;
+        border-radius: 4px;
+        right: -9px;
+        bottom: -6px;
+        transform: rotate(45deg);
+      }
+      .card-text {
+        color: #1b3246;
+        font-size: 1.05rem;
+        line-height: 1.5;
+      }
+      .lit {
+        color: #0f2748;
+        font-weight: 700;
+      }
+      .code-panel {
+        background: #0d1735;
+        border-radius: 18px;
+        border: 2px solid rgba(83, 179, 255, 0.8);
+        box-shadow: inset 0 0 24px rgba(40, 81, 119, 0.35);
+        padding: 22px 18px 18px;
+        color: #dfeefb;
+      }
+      .code-dots {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .code-dots span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .code-dots span:nth-child(1) { background: #ff6b6b; }
+      .code-dots span:nth-child(2) { background: #ffd93d; }
+      .code-dots span:nth-child(3) { background: #6ee7b7; }
+      pre {
+        margin: 0;
+        font-family: Consolas, "Courier New", monospace;
+        line-height: 1.7;
+        font-size: .9rem;
+        white-space: pre-wrap;
+      }
+      .kw { color: #d9a9ff; }
+      .fn { color: #8ad2ff; }
+      .str { color: #9ae6b4; }
+      .cm { color: #94a3b8; }
+      .blue-text { color: #8ad2ff; }
+      .mint-text { color: #9ae6b4; }
+      .step-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 18px 0 28px;
+      }
+      .step {
+        background: #dff8fb;
+        border: 2px solid rgba(38, 133, 169, 0.75);
+        border-radius: 18px;
+        padding: 14px 14px 18px;
+      }
+      .step .step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #40d2d6, #4d9ef4);
+        border-radius: 10px;
+        color: white;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+      .step h4 {
+        margin: 0 0 10px;
+        color: #0d1d2d;
+        font-size: 1.2rem;
+      }
+      .step p {
+        margin: 0;
+        color: #314859;
+        line-height: 1.55;
+      }
+      .mini-box {
+        margin-top: 12px;
+        border: 2px solid #ff7c7c;
+        background: rgba(255,255,255,.25);
+        border-radius: 12px;
+        padding: 12px;
+        color: #b33636;
+        font-weight: 700;
+      }
+      .sum-box {
+        margin-top: 10px;
+        background: linear-gradient(90deg, #b78eff, #d6befe);
+        color: #132438;
+        border-radius: 15px;
+        padding: 14px 16px;
+        font-weight: 800;
+        line-height: 1.6;
+      }
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: linear-gradient(90deg, #2dbf80, #20a96a);
+        color: white;
+        padding: 14px 20px;
+        border-radius: 18px;
+        margin: 20px 0 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .title-orange { background: linear-gradient(90deg, #ffb357, #ff7e4e); }
+      .title-purple { background: linear-gradient(90deg, #7a59ff, #b57bff); }
+      .title-cyan { background: linear-gradient(90deg, #42cfe6, #2db9d2); }
+      .stack-list {
+        list-style: disc;
+        margin: 0;
+        padding-left: 24px;
+        color: #1f3347;
+        font-size: 1.06rem;
+        line-height: 1.8;
+      }
+      .inline-tag {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: .72rem;
+        letter-spacing: .08em;
+        background: rgba(255,255,255,.35);
+        border: 1px solid rgba(19, 64, 98, 0.23);
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .callout {
+        background: rgba(255,255,255,.25);
+        border: 2px solid rgba(20, 83, 114, 0.28);
+        border-radius: 14px;
+        padding: 14px;
+      }
+      .callout p { margin: 0; }
+      .result-box {
+        background: #1d2d43;
+        border-radius: 14px;
+        border: 2px solid rgba(109, 219, 244, 0.75);
+        color: #effcff;
+        padding: 14px 12px;
+        font-family: Consolas, monospace;
+        font-size: .92rem;
+      }
+      @media (max-width: 920px) {
+        .module-grid, .two-col, .step-grid { grid-template-columns: 1fr; }
+        .week-title { flex-direction: column; align-items: flex-start; }
+      }
+      @media (max-width: 560px) {
+        .page { padding-left: 12px; padding-right: 12px; }
+        .top-header { flex-direction: column; align-items: flex-start; }
+        .title-wrap { align-items: flex-start; }
+      }
     </style>
   </head>
   <body>
-    <main>
-      <div class="card">
-        <p style="text-transform:uppercase; letter-spacing:.12em; color:#53d8ff; font-size:.72rem; font-weight:800;">Semana 05</p>
-        <h1>Pilas</h1>
-        <p>Contenido de la semana 05. La vista previa permite revisar la práctica y el archivo puede guardarse en el equipo.</p>
-        <ul>
-          <li>Práctica con pilas LIFO</li>
-          <li>Validación de resultados</li>
-          <li>Aplicación de lógica de empuje y extracción</li>
-        </ul>
-        <div class="actions">
-          <a class="btn primary" href="semana-05.html" download>Descargar</a>
-          <a class="btn secondary" href="../index.html#unidades">Volver</a>
-        </div>
+    <div class="page">
+      <div class="top-header">
+        <div class="badge">Semana 05 • Pilas</div>
+        <a href="../index.html#unidades" class="btn-back">Volver</a>
       </div>
-    </main>
+
+      <section class="week">
+        <div class="week-title">
+          <div class="title-wrap">
+            <div class="stack-icon"><div class="mini"></div></div>
+            <h1>consultarCima()</h1>
+          </div>
+          <div class="java-pill">Java</div>
+        </div>
+
+        <div class="module">
+          <div class="module-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="num">1</span>
+                <h3>¿Qué hace?</h3>
+              </div>
+              <div class="icon-box" aria-hidden="true">
+                <div class="user"></div>
+                <div class="search"></div>
+              </div>
+              <p class="card-text">
+                Muestra la información del alumno ubicado en el tope sin extraerlo de la estructura.
+              </p>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><span class="kw">public</span> <span class="kw">void</span> <span class="fn">consultarCima</span>() {
+    <span class="kw">if</span> (<span class="fn">estaVacia</span>()) {
+        <span class="fn">System</span>.out.println(<span class="str">"La pila está vacía.</span>
+        <span class="str">No hay elementos en la cima."</span>);
+        <span class="kw">return</span>;
+    }
+    <span class="fn">System</span>.out.println(<span class="str">"--- INFORMACIÓN DE LA CIMA ---"</span>);
+    <span class="fn">System</span>.out.println(<span class="fn">arregloPila</span>[<span class="fn">tope</span>]);
+    <span class="fn">System</span>.out.println(<span class="str">"-------------------------------"</span>);
+}</pre>
+            </div>
+          </div>
+
+          <div class="section-title"><span>Paso a paso</span><span>Explicación del código</span></div>
+          <div class="step-grid">
+            <div class="step">
+              <div class="step-num">1</div>
+              <h4>Verifica si la pila está vacía</h4>
+              <p>Se llama al método <span class="lit">estaVacia()</span>. Si la pila no tiene elementos, se muestra un mensaje y se termina.</p>
+              <div class="mini-box">Pila vacía</div>
+            </div>
+
+            <div class="step">
+              <div class="step-num">2</div>
+              <h4>Accede al tope de la pila</h4>
+              <p>Si la pila tiene elementos, se accede directamente al índice <span class="lit">tope</span> del arreglo para obtener el alumno que está en la cima.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-num">3</div>
+              <h4>Imprime los datos</h4>
+              <p>Finalmente, se imprime la información del alumno en la cima y se muestra un separador.</p>
+              <div class="mini-box">--- INFORMACIÓN DE LA CIMA ---</div>
+            </div>
+          </div>
+
+          <div class="sum-box">
+            <span class="inline-tag">En resumen</span>
+            <div style="margin-top: 8px;">consultarCima() verifica si la pila está vacía y, si tiene elementos, accede al índice tope del arreglo para mostrar sus datos sin extraerlos.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="week" style="margin-top: 34px;">
+        <div class="week-title title-purple">
+          <div class="title-wrap">
+            <div class="stack-icon"><div class="mini" style="background: rgba(255,255,255,.44);"></div></div>
+            <h1>buscarAlumnoPorCodigo(String codigo)</h1>
+          </div>
+          <div class="java-pill">Java</div>
+        </div>
+
+        <div class="module">
+          <div class="module-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="num">1</span>
+                <h3>¿Qué hace?</h3>
+              </div>
+              <ul class="stack-list">
+                <li>Busca un alumno en la pila usando su código y muestra si existe o no.</li>
+                <li>Sus datos.</li>
+                <li>La posición relativa respecto a la cima (0 = cima).</li>
+              </ul>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><span class="kw">public</span> <span class="kw">void</span> <span class="fn">buscarAlumnoPorCodigo</span>(<span class="kw">String</span> codigo) {
+    <span class="kw">if</span> (<span class="fn">estaVacia</span>()) {
+        <span class="fn">System</span>.out.println(<span class="str">"La pila está vacía. No se puede realizar la búsqueda."</span>);
+        <span class="kw">return</span>;
+    }
+
+    <span class="kw">boolean</span> encontrado = <span class="kw">false</span>;
+    <span class="kw">for</span> (<span class="kw">int</span> i = <span class="kw">tope</span>; i &gt;= 0; i--) {
+        <span class="kw">if</span> (<span class="fn">arregloPila</span>[i].getCodigo().equals(codigo)) {
+            <span class="fn">System</span>.out.println(<span class="str">"\nAlumno encontrado!"</span>);
+            <span class="fn">System</span>.out.println(<span class="str">"Datos: "</span> + <span class="fn">arregloPila</span>[i]);
+            <span class="fn">System</span>.out.println(<span class="str">"Posición relativa con la cima: "</span> + (<span class="kw">tope</span> - i));
+            encontrado = <span class="kw">true</span>;
+            <span class="kw">break</span>;
+        }
+    }
+
+    <span class="kw">if</span> (!encontrado) {
+        <span class="fn">System</span>.out.println(<span class="str">"\nNo se encontró ningún alumno con el código: "</span> + codigo);
+    }
+}</pre>
+            </div>
+          </div>
+
+          <div class="section-title title-purple"><span>Paso a paso</span><span>Explicación del código</span></div>
+          <div class="step-grid">
+            <div class="step">
+              <div class="step-num">3.1</div>
+              <h4>Verifica si la pila está vacía</h4>
+              <p>Si la pila está vacía, se muestra un mensaje de advertencia y se termina el método.</p>
+              <div class="mini-box">Si está vacía, no se puede realizar la búsqueda.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3.2</div>
+              <h4>Recorre la pila desde la cima</h4>
+              <p>Se usa un ciclo que va desde el índice <span class="lit">tope</span> hasta 0, en orden descendente.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">3.3</div>
+              <h4>Compara el código</h4>
+              <p>Si el código coincide con el de un alumno, se imprime su información y la posición relativa respecto a la cima.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">3.4</div>
+              <h4>Si no lo encuentra</h4>
+              <p>Se termina el recorrido sin encontrarlo y se muestra un mensaje de que no existe.</p>
+              <div class="mini-box">No se encontró ningún alumno con el código.</div>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="callout">
+              <p class="lit">Ejemplo práctico (alumno encontrado)</p>
+              <div class="result-box">Cima (tope = 3) → A005 (pos 0) <br> A004 (pos 1) <br> A003 (pos 2) <br> A002 (pos 3) <br> Buscar alumno por código "A003" → Alumno encontrado <br> Datos: Alumno{codigo='A003', nombre='Ana Pérez', ...} <br> Posición relativa respecto a la cima: 2</div>
+            </div>
+            <div class="callout">
+              <p class="lit">Ejemplo práctico (no encontrado)</p>
+              <div class="result-box">Cima (tope = 2) → A005 (pos 0) <br> A002 (pos 1) <br> A001 (pos 2) <br> BuscarAlumnoPorCodigo("A010") <br> → No se encontró ningún alumno con el código A010</div>
+            </div>
+          </div>
+
+          <div class="sum-box" style="margin-top: 20px;">
+            <span class="inline-tag">En resumen</span>
+            <div style="margin-top: 8px;">buscarAlumnoPorCodigo(String codigo) recorre la pila desde la cima, compara los códigos y, si encuentra al alumno, muestra sus datos y la posición relativa. Si no lo encuentra, indica que no existe.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="week" style="margin-top: 34px;">
+        <div class="week-title title-cyan">
+          <div class="title-wrap">
+            <div class="stack-icon"><div class="mini"></div></div>
+            <h1>mostrarEstadoCapacidad()</h1>
+          </div>
+          <div class="java-pill">Java</div>
+        </div>
+
+        <div class="module">
+          <div class="module-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="num">1</span>
+                <h3>¿Qué hace?</h3>
+              </div>
+              <ul class="stack-list">
+                <li>Calcula y muestra el total de la capacidad, los elementos actuales almacenados y los espacios libres disponibles.</li>
+              </ul>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><span class="kw">public</span> <span class="kw">void</span> <span class="fn">mostrarEstadoCapacidad</span>() {
+    <span class="kw">int</span> elementosActuales = <span class="kw">tope</span> + 1;
+    <span class="kw">int</span> espaciosLibres = <span class="kw">capacidad</span> - elementosActuales;
+    <span class="fn">System</span>.out.println(<span class="str">"--- ESTADO DE CAPACIDAD DE LA PILA ---"</span>);
+    <span class="fn">System</span>.out.println(<span class="str">"Capacidad máxima total: "</span> + <span class="kw">capacidad</span>);
+    <span class="fn">System</span>.out.println(<span class="str">"Elementos almacenados: "</span> + elementosActuales);
+    <span class="fn">System</span>.out.println(<span class="str">"Espacios libres: "</span> + espaciosLibres);
+    <span class="fn">System</span>.out.println(<span class="str">"--------------------------------------"</span>);
+}</pre>
+            </div>
+          </div>
+
+          <div class="section-title title-cyan"><span>Explicación del código</span></div>
+          <div class="step-grid">
+            <div class="step">
+              <div class="step-num">3.1</div>
+              <h4>Cálculo de elementos actuales</h4>
+              <p>Como el índice <span class="lit">tope</span> comienza en -1, la cantidad de elementos actuales se obtiene con:</p>
+              <div class="result-box">elementosActuales = tope + 1</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3.2</div>
+              <h4>Cálculo de espacios libres</h4>
+              <p>Se resta la cantidad de elementos actuales a la capacidad total:</p>
+              <div class="result-box">espaciosLibres = capacidad - elementosActuales</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3.3</div>
+              <h4>Mostrar la información</h4>
+              <p>Finalmente, imprime en consola los tres datos: capacidad total, elementos almacenados y espacios libres.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p class="lit">Ejemplo práctico</p>
+            <div class="result-box">capacidad = 5 <br> tope = 2 <br> Cálculos: <br> elementosActuales = 2 + 1 = 3 <br> espaciosLibres = 5 - 3 = 2 <br> Salida en consola: <br> --- ESTADO DE CAPACIDAD DE LA PILA --- <br> Capacidad máxima total: 5 <br> Elementos almacenados: 3 <br> Espacios libres: 2</div>
+          </div>
+
+          <div class="sum-box" style="margin-top: 20px;">
+            <span class="inline-tag">En resumen</span>
+            <div style="margin-top: 8px;">mostrarEstadoCapacidad() calcula los valores con <span class="lit">tope + 1</span> y <span class="lit">capacidad - elementosActuales</span>, y luego los muestra para conocer el estado de la pila.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="week" style="margin-top: 34px;">
+        <div class="week-title title-orange">
+          <div class="title-wrap">
+            <div class="stack-icon"><div class="mini"></div></div>
+            <h1>verificarEstadoLogico()</h1>
+          </div>
+          <div class="java-pill">Java</div>
+        </div>
+
+        <div class="module">
+          <div class="module-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="num">4</span>
+                <h3>¿Qué hace?</h3>
+              </div>
+              <p class="card-text">Evalúa y explica si la pila está vacía o llena, mostrando el resultado de la validación en una sola consulta.</p>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><span class="kw">public</span> <span class="kw">void</span> <span class="fn">verificarEstadoLogico</span>() {
+    <span class="fn">System</span>.out.println(<span class="str">"--- VERIFICACIÓN DE ESTADO LÓGICO ---"</span>);
+    <span class="fn">System</span>.out.println(<span class="str">"¿La pila está vacía? - "</span> + <span class="kw">estaVacia</span>());
+    <span class="fn">System</span>.out.println(<span class="str">"¿La pila está llena? - "</span> + <span class="kw">estaLlena</span>());
+    <span class="fn">System</span>.out.println(<span class="str">"------------------------------------"</span>);
+}</pre>
+            </div>
+          </div>
+
+          <div class="result-box" style="margin-bottom: 16px;">VERIFICACIÓN DE ESTADO LÓGICO <br> ¿La pila está vacía? → true <br> ¿La pila está llena? → false</div>
+        </div>
+      </section>
+
+      <section class="week" style="margin-top: 34px;">
+        <div class="week-title title-purple">
+          <div class="title-wrap">
+            <div class="stack-icon"><div class="mini"></div></div>
+            <h1>mostrarMejorPromedio()</h1>
+          </div>
+          <div class="java-pill">Java</div>
+        </div>
+
+        <div class="module">
+          <div class="module-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="num">5</span>
+                <h3>¿Qué hace?</h3>
+              </div>
+              <p class="card-text">Analiza los elementos en la pila y determina cuál estudiante posee el mejor promedio académico.</p>
+            </div>
+
+            <div class="code-panel">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre><span class="kw">public</span> <span class="kw">void</span> <span class="fn">mostrarMejorPromedio</span>() {
+    <span class="kw">if</span> (<span class="fn">estaVacia</span>()) {
+        <span class="fn">System</span>.out.println(<span class="str">"La pila está vacía."</span>);
+        <span class="kw">return</span>;
+    }
+
+    <span class="kw">Alumno</span> mejorAlumno = <span class="fn">arregloPila</span>[0];
+    <span class="kw">for</span> (<span class="kw">int</span> i = 1; i &lt;= <span class="fn">tope</span>; i++) {
+        <span class="kw">if</span> (<span class="fn">arregloPila</span>[i].getPromedio() &gt; mejorAlumno.getPromedio()) {
+            mejorAlumno = <span class="fn">arregloPila</span>[i];
+        }
+    }
+
+    <span class="fn">System</span>.out.println(<span class="str">"--- MEJOR PROMEDIO ---"</span>);
+    <span class="fn">System</span>.out.println(<span class="str">"Alumno: "</span> + mejorAlumno.getNombre());
+    <span class="fn">System</span>.out.println(<span class="str">"Promedio: "</span> + mejorAlumno.getPromedio());
+}</pre>
+            </div>
+          </div>
+
+          <div class="result-box">--- MEJOR PROMEDIO --- <br> Alumno: Ana García <br> Promedio: 9.8</div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
