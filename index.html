@@ -3,766 +3,353 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portafolio académico universitario de Joshep Emerson Condori Moreno - UPLA"
-    />
     <title>Joshep Emerson | Portafolio UPLA</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
     <style>
       :root {
         --bg-900: #07121f;
         --bg-800: #0d1d2d;
-        --bg-700: #12283b;
-        --panel: rgba(16, 35, 52, 0.9);
-        --panel-strong: rgba(19, 49, 70, 0.98);
+        --panel: rgba(16, 35, 52, 0.95);
         --line: rgba(142, 182, 214, 0.18);
         --cyan: #53d8ff;
-        --cyan-strong: #2cc8ff;
         --violet: #8f5bff;
-        --purple: #b875ff;
         --text: #edf7ff;
         --muted: #b5cedf;
         --white: #ffffff;
-        --shadow: 0 24px 60px rgba(4, 9, 17, 0.45);
-        --radius: 18px;
-        --radius-xl: 28px;
+        --shadow: 0 18px 40px rgba(4, 9, 17, 0.35);
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
       body {
-        font-family: "Inter", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(83, 216, 255, 0.14), transparent 22%),
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at top left, rgba(83, 216, 255, 0.12), transparent 20%),
           radial-gradient(circle at right center, rgba(143, 91, 255, 0.18), transparent 24%),
           linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 100%);
         color: var(--text);
         line-height: 1.6;
       }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      button {
-        font: inherit;
-      }
-
-      .container {
-        width: min(1160px, calc(100% - 1.4rem));
-        margin: 0 auto;
-      }
-
-      .eyebrow {
-        color: var(--cyan);
-        font-size: 0.76rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        font-weight: 800;
-      }
-
-      h1, h2, h3, h4 {
-        letter-spacing: -0.05em;
-        line-height: 1.1;
-      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(1140px, calc(100% - 1.5rem)); margin: 0 auto; }
+      .eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; font-weight: 800; }
+      h1,h2,h3 { letter-spacing: -0.04em; line-height: 1.1; }
 
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 30;
-        backdrop-filter: blur(16px);
-        background: rgba(7, 18, 31, 0.7);
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(7, 18, 31, 0.72);
         border-bottom: 1px solid var(--line);
       }
-
       .navbar {
+        min-height: 78px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 80px;
         gap: 1rem;
       }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .brand-logo {
-        width: 54px;
-        height: 54px;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      .brand-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        padding: 5px;
-      }
-
+      .brand { display: inline-flex; align-items: center; gap: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .brand-logo { width: 52px; height: 52px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+      .brand-logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
       .nav-links {
         display: none;
         align-items: center;
-        gap: 1.8rem;
-        font-size: 0.8rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        gap: 1.5rem;
         color: var(--muted);
+        font-size: .72rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
       }
-
-      .nav-links a {
-        transition: color 0.25s ease;
-      }
-
-      .nav-links a:hover {
+      .nav-links a:hover { color: var(--white); }
+      .nav-cta {
+        border: 1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.04);
         color: var(--white);
+        border-radius: 999px;
+        padding: .75rem 1.1rem;
+        font-size: .7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: .12em;
       }
 
-      .nav-cta,
-      .primary-btn,
-      .secondary-btn,
-      .delivery-link,
-      .practice-btn {
+      .hero { padding: 4rem 0 2rem; }
+      .hero-grid { display: grid; gap: 2rem; align-items: center; }
+      .hero-copy h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); margin-top: .8rem; }
+      .student-meta { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0 1.2rem; }
+      .student-meta span {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,.02);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: .5rem .8rem;
+        font-size: .9rem;
+      }
+      .tagline { max-width: 700px; color: #ebf5ff; font-size: 1.08rem; margin-bottom: 1.5rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.5rem; }
+      .primary-btn, .secondary-btn, .action-btn, .delivery-link, .practice-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: none;
         border-radius: 999px;
+        transition: transform .2s ease;
         cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       }
-
-      .nav-cta {
-        padding: 0.8rem 1.2rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: var(--white);
-        font-size: 0.72rem;
+      .primary-btn, .secondary-btn, .delivery-link, .practice-btn {
+        padding: 1rem 1.4rem;
         font-weight: 800;
-        letter-spacing: 0.12em;
         text-transform: uppercase;
+        letter-spacing: .08em;
+        font-size: .72rem;
       }
-
-      .nav-cta:hover,
-      .primary-btn:hover,
-      .secondary-btn:hover,
-      .delivery-link:hover,
-      .practice-btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero {
-        padding: 4rem 0 2rem;
-      }
-
-      .hero-grid {
-        display: grid;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .hero-copy h1 {
-        margin-top: 0.8rem;
-        font-size: clamp(2.6rem, 5.5vw, 4.8rem);
-      }
-
-      .student-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        margin: 1rem 0 1.2rem;
-      }
-
-      .student-meta span {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.5rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      .tagline {
-        max-width: 700px;
-        color: #ebf5ff;
-        font-size: 1.08rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
-        margin-bottom: 1.5rem;
-      }
-
       .primary-btn {
         background: linear-gradient(135deg, var(--cyan), var(--violet));
         color: var(--white);
-        padding: 1rem 1.5rem;
-        box-shadow: 0 0 26px rgba(83, 216, 255, 0.38);
-        font-weight: 800;
+        box-shadow: 0 0 24px rgba(83, 216, 255, 0.28);
       }
-
       .secondary-btn {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255,255,255,.02);
+        border: 1px solid rgba(255,255,255,.12);
         color: var(--white);
-        padding: 1rem 1.5rem;
-        font-weight: 700;
       }
-
-      .info-list {
-        list-style: none;
-        display: grid;
-        gap: 0.7rem;
-        max-width: 640px;
-      }
-
-      .info-list li {
-        position: relative;
-        padding-left: 1.4rem;
-        color: var(--muted);
-      }
-
+      .primary-btn:hover, .secondary-btn:hover, .action-btn:hover, .delivery-link:hover, .practice-btn:hover { transform: translateY(-2px); }
+      .info-list { list-style: none; display: grid; gap: .7rem; max-width: 650px; }
+      .info-list li { position: relative; padding-left: 1.3rem; color: var(--muted); }
       .info-list li::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 0.7rem;
-        width: 0.55rem;
-        height: 0.55rem;
+        top: .72rem;
+        width: .55rem;
+        height: .55rem;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--cyan), var(--violet));
-        box-shadow: 0 0 20px rgba(83, 216, 255, 0.4);
       }
 
       .profile-card {
-        position: relative;
-        background: linear-gradient(180deg, rgba(16, 35, 52, 0.95), rgba(10, 23, 33, 0.92));
+        background: linear-gradient(180deg, rgba(16,35,52,.95), rgba(10,23,33,.92));
         border: 1px solid var(--line);
-        border-radius: var(--radius-xl);
+        border-radius: 28px;
         box-shadow: var(--shadow);
-        padding: 1.2rem;
+        padding: 1.1rem;
       }
-
-      .profile-card::before {
-        content: "";
-        position: absolute;
-        inset: -1px;
-        z-index: -1;
-        border-radius: inherit;
-        background: linear-gradient(135deg, rgba(83, 216, 255, 0.25), rgba(143, 91, 255, 0.24), transparent 72%);
-      }
-
       .photo-frame {
         width: min(280px, 72vw);
         aspect-ratio: 1;
-        margin: 0 auto 1.2rem;
         border-radius: 50%;
         overflow: hidden;
-        border: 3px solid rgba(83, 216, 255, 0.8);
-        box-shadow: 0 0 30px rgba(83, 216, 255, 0.26), 0 0 50px rgba(143, 91, 255, 0.2);
-        background: rgba(255, 255, 255, 0.04);
+        margin: 0 auto 1.2rem;
+        border: 3px solid rgba(83,216,255,.8);
       }
-
-      .photo-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .profile-details {
-        display: grid;
-        gap: 0.75rem;
-      }
-
+      .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+      .profile-details { display: grid; gap: .75rem; }
       .profile-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        padding: 0.8rem 0.9rem;
+        padding: .8rem .9rem;
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255,255,255,.02);
         border: 1px solid var(--line);
       }
+      .profile-row span { color: var(--muted); }
+      .profile-row strong { color: var(--white); text-align: right; }
 
-      .profile-row span {
-        color: var(--muted);
-      }
+      .section { padding: 2rem 0 1rem; }
+      .section-header { margin-bottom: 1.2rem; }
+      .section-header h2 { font-size: clamp(2rem, 3vw, 3rem); margin-top: .5rem; }
 
-      .profile-row strong {
-        color: var(--white);
-        text-align: right;
-      }
-
-      .section {
-        padding: 2rem 0 1rem;
-      }
-
-      .section-header {
-        margin-bottom: 1.4rem;
-      }
-
-      .section-header h2 {
-        margin-top: 0.6rem;
-        font-size: clamp(2rem, 3.5vw, 3rem);
-      }
-
-      .metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin-bottom: 1.8rem;
-      }
-
+      .metrics { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:1rem; margin-bottom: 1.4rem; }
       .metric-card {
-        text-align: center;
         padding: 1.3rem 1rem;
-        background: rgba(19, 39, 56, 0.9);
         border: 1px solid var(--line);
-        border-radius: var(--radius);
+        background: rgba(19,39,56,.9);
+        border-radius: 18px;
+        text-align: center;
         box-shadow: var(--shadow);
       }
+      .metric-card .value { display:block; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; }
+      .metric-card .label { display:block; margin-top: .2rem; font-size: .76rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted); }
 
-      .metric-card .value {
-        display: block;
-        font-size: clamp(1.7rem, 4vw, 2.5rem);
-        font-weight: 900;
-        color: var(--white);
-      }
-
-      .metric-card .label {
-        display: block;
-        margin-top: 0.25rem;
-        font-size: 0.76rem;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-
-      .deliveries-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1rem;
-      }
-
+      .deliveries-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:1rem; }
       .delivery-card {
-        background: linear-gradient(180deg, rgba(16, 35, 52, 0.96), rgba(10, 20, 31, 0.96));
-        border: 1px solid var(--line);
-        border-radius: var(--radius-xl);
+        background: linear-gradient(180deg, rgba(16,35,52,.96), rgba(10,20,31,.96));
+        border:1px solid var(--line);
+        border-radius: 22px;
         padding: 1.2rem;
         box-shadow: var(--shadow);
-        display: flex;
+        display:flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap:.8rem;
       }
-
       .delivery-tag {
-        display: inline-flex;
-        align-items: center;
+        display:inline-flex;
+        align-items:center;
         width: fit-content;
-        padding: 0.38rem 0.72rem;
+        padding: .38rem .72rem;
         border-radius: 999px;
-        background: rgba(83, 216, 255, 0.1);
-        border: 1px solid rgba(83, 216, 255, 0.22);
+        background: rgba(83,216,255,.09);
+        border: 1px solid rgba(83,216,255,.22);
         color: var(--cyan);
-        font-size: 0.7rem;
+        font-size: .68rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
         text-transform: uppercase;
+        letter-spacing: .08em;
       }
-
-      .delivery-card h3 {
-        font-size: 1.6rem;
-      }
-
-      .delivery-card p {
-        color: var(--muted);
-      }
-
-      .delivery-list {
-        list-style: none;
-        display: grid;
-        gap: 0.5rem;
-        margin-top: auto;
-      }
-
+      .delivery-card h3 { font-size: 1.6rem; }
+      .delivery-card p { color: var(--muted); }
+      .delivery-list { list-style:none; display:grid; gap:.5rem; margin-top:auto; }
       .delivery-list li {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.7rem;
-        padding: 0.6rem 0.7rem;
+        display:flex;
+        justify-content:space-between;
+        gap:.6rem;
+        background: rgba(255,255,255,.02);
+        border:1px solid rgba(255,255,255,.05);
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: .6rem .7rem;
         color: var(--muted);
       }
-
-      .delivery-list span:last-child {
-        color: var(--cyan);
-        font-weight: 700;
-      }
-
+      .delivery-list span:last-child { color: var(--cyan); font-weight: 700; }
       .delivery-link {
-        margin-top: 0.4rem;
-        background: rgba(143, 91, 255, 0.12);
-        border: 1px solid rgba(143, 91, 255, 0.38);
+        margin-top: .3rem;
+        background: rgba(143,91,255,.12);
+        border:1px solid rgba(143,91,255,.38);
         color: var(--white);
-        font-size: 0.72rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 0.8rem 1rem;
       }
 
-      .courses-grid {
-        display: grid;
-        gap: 1rem;
-      }
-
+      .courses-grid { display:grid; gap:1rem; }
       .course-card {
-        background: linear-gradient(180deg, rgba(16, 35, 52, 0.96), rgba(10, 21, 31, 0.96));
-        border: 1px solid var(--line);
-        border-radius: var(--radius-xl);
+        background: linear-gradient(180deg, rgba(16,35,52,.96), rgba(10,21,31,.96));
+        border:1px solid var(--line);
+        border-radius: 22px;
+        padding:1.4rem;
         box-shadow: var(--shadow);
-        padding: 1.4rem;
       }
-
-      .course-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .course-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
+      .course-head { display:flex; justify-content: space-between; align-items:center; gap:1rem; margin-bottom:1rem; }
+      .course-badges { display:flex; flex-wrap:wrap; gap:.5rem; }
       .course-badges span {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.42rem 0.7rem;
-        border-radius: 999px;
-        background: rgba(83, 216, 255, 0.08);
-        border: 1px solid rgba(83, 216, 255, 0.2);
-        color: var(--cyan);
-        font-size: 0.68rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        display:inline-flex; align-items:center; padding:.4rem .7rem; border-radius:999px; background: rgba(83,216,255,.08); border:1px solid rgba(83,216,255,.2); color: var(--cyan); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
       }
-
-      .course-card h3 {
-        margin-bottom: 0.6rem;
-        font-size: clamp(1.8rem, 3vw, 2.4rem);
-      }
-
-      .course-card > p {
-        color: var(--muted);
-        margin-bottom: 1rem;
-      }
-
-      .course-details {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 0.8rem;
-      }
-
+      .course-card h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: .5rem; }
+      .course-card > p { color: var(--muted); margin-bottom: 1rem; }
+      .course-details { list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:.8rem; }
       .course-details li {
-        padding: 0.8rem 0.9rem;
+        background: rgba(255,255,255,.02);
+        border:1px solid var(--line);
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--line);
+        padding: .8rem .9rem;
         color: var(--muted);
       }
+      .course-details strong { display:block; color: var(--white); margin-bottom:.2rem; }
 
-      .course-details strong {
-        display: block;
-        color: var(--white);
-        margin-bottom: 0.25rem;
-      }
-
-      .units {
-        padding-bottom: 4rem;
-      }
-
-      .accordion {
-        display: grid;
-        gap: 1rem;
-      }
-
+      .units { padding-bottom: 4rem; }
+      .accordion { display:grid; gap:1rem; }
       .accordion-item {
-        background: linear-gradient(180deg, rgba(17, 35, 54, 0.96), rgba(10, 18, 28, 0.96));
-        border: 1px solid var(--line);
-        border-radius: var(--radius-xl);
+        background: linear-gradient(180deg, rgba(17,35,54,.96), rgba(10,18,28,.96));
+        border:1px solid var(--line);
+        border-radius: 22px;
         overflow: hidden;
         box-shadow: var(--shadow);
       }
-
       .accordion-trigger {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:1rem;
         padding: 1.1rem 1.2rem;
-        background: transparent;
-        border: none;
         color: var(--white);
-        text-align: left;
-        cursor: pointer;
+        background: transparent;
+        border:none;
         font-size: 1.04rem;
         font-weight: 700;
+        text-align:left;
+        cursor:pointer;
       }
-
-      .unit-range {
-        color: var(--cyan);
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .toggle-icon {
-        position: relative;
-        width: 18px;
-        height: 18px;
-      }
-
-      .toggle-icon::before,
-      .toggle-icon::after {
+      .unit-range { color: var(--cyan); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; white-space:nowrap; }
+      .toggle-icon { position: relative; width: 18px; height: 18px; }
+      .toggle-icon::before, .toggle-icon::after {
         content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 12px;
-        height: 2px;
-        border-radius: 999px;
+        position:absolute;
+        top:50%; left:50%;
+        width:12px; height:2px;
+        border-radius:999px;
         background: var(--white);
         transform: translate(-50%, -50%);
-        transition: transform 0.25s ease;
       }
-
-      .toggle-icon::after {
-        transform: translate(-50%, -50%) rotate(90deg);
-      }
-
-      .accordion-item.active .toggle-icon::after {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-
-      .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-      }
-
-      .accordion-item.active .accordion-content {
-        max-height: 1800px;
-      }
-
-      .accordion-body {
-        padding: 0 1.2rem 1.2rem;
-      }
-
-      .week-list {
-        display: grid;
-        gap: 0.9rem;
-      }
-
+      .toggle-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+      .accordion-content { max-height: 0; overflow: hidden; transition:max-height .3s ease; }
+      .accordion-item.active .accordion-content { max-height: 2200px; }
+      .accordion-body { padding: 0 1.2rem 1.2rem; }
+      .week-list { display:grid; gap:.9rem; }
       .week-item {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 0.8rem 1rem;
-        align-items: center;
-        padding: 1rem;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--line);
+        display:grid; grid-template-columns: 1fr auto; gap:.8rem 1rem; align-items:center;
+        background: rgba(255,255,255,.02); border:1px solid var(--line); border-radius: 14px; padding: 1rem;
       }
-
-      .week-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-      }
-
-      .week-label {
-        color: var(--cyan);
-        font-size: 0.7rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .week-meta strong {
-        font-size: 1.08rem;
-      }
-
-      .activity-list {
-        list-style: none;
-        display: grid;
-        gap: 0.45rem;
-        margin-top: 0.5rem;
-      }
-
+      .week-meta { display:flex; flex-direction:column; gap:.35rem; }
+      .week-label { color: var(--cyan); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 800; }
+      .week-meta strong { font-size: 1.08rem; }
+      .activity-list { list-style:none; display:grid; gap:.45rem; margin-top:.5rem; }
       .activity-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        padding: 0.6rem 0.7rem;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.025);
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        color: var(--muted);
+        display:flex; justify-content:space-between; align-items:center; gap:.8rem; flex-wrap:wrap;
+        background: rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.05); padding: .6rem .7rem; border-radius: 10px; color: var(--muted);
       }
-
+      .activity-main { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; }
       .activity-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 108px;
-        padding: 0.28rem 0.6rem;
-        border-radius: 999px;
-        background: rgba(83, 216, 255, 0.1);
-        border: 1px solid rgba(83, 216, 255, 0.18);
-        color: var(--cyan);
-        font-size: 0.64rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        display:inline-flex; align-items:center; justify-content:center; min-width:108px; padding:.28rem .6rem; border-radius:999px; background: rgba(83,216,255,.1); border: 1px solid rgba(83,216,255,.18); color: var(--cyan); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
       }
-
       .activity-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.22rem 0.55rem;
-        border-radius: 999px;
-        background: rgba(143, 91, 255, 0.12);
-        border: 1px solid rgba(143, 91, 255, 0.26);
-        color: #dbcaff;
-        font-size: 0.62rem;
+        display:inline-flex; align-items:center; padding:.22rem .55rem; border-radius:999px; background: rgba(143,91,255,.08); border: 1px solid rgba(143,91,255,.22); color:#dbcaff; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+      }
+      .activity-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
+      .action-btn {
+        border: 1px solid rgba(143,91,255,.38);
+        padding: .55rem .8rem;
+        font-size: .62rem;
         font-weight: 800;
-        letter-spacing: 0.08em;
+        letter-spacing: .08em;
         text-transform: uppercase;
       }
-
+      .action-btn.view { background: rgba(83,216,255,.1); color: var(--white); }
+      .action-btn.download { background: rgba(143,91,255,.12); color: var(--white); }
       .practice-btn {
-        background: rgba(143, 91, 255, 0.12);
-        border: 1px solid rgba(143, 91, 255, 0.4);
-        color: var(--white);
-        padding: 0.7rem 1rem;
-        font-size: 0.72rem;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        background: rgba(143,91,255,.12); border:1px solid rgba(143,91,255,.4); color: var(--white);
       }
 
-      footer {
-        padding: 1.4rem 0 2.5rem;
-        color: var(--muted);
-      }
-
+      footer { padding: 1.4rem 0 2.5rem; }
       .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-        border-top: 1px solid var(--line);
-        padding-top: 1.2rem;
+        display:flex; justify-content:space-between; align-items:center; gap:1rem;
+        border-top:1px solid var(--line); padding-top:1.2rem; color: var(--muted);
       }
 
-      @media (min-width: 700px) {
-        .nav-links {
-          display: flex;
-        }
-
-        .hero-grid {
-          grid-template-columns: 1.15fr 0.85fr;
-        }
+      @media (min-width:700px) {
+        .nav-links { display: flex; }
+        .hero-grid { grid-template-columns: 1.15fr .85fr; }
       }
-
-      @media (max-width: 699px) {
-        .metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .course-head,
-        .footer-inner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .week-item {
-          grid-template-columns: 1fr;
-        }
-
-        .practice-btn,
-        .delivery-link {
-          width: 100%;
-        }
+      @media (max-width:699px) {
+        .metrics { grid-template-columns: 1fr; }
+        .week-item { grid-template-columns: 1fr; }
+        .course-head, .footer-inner { flex-direction: column; align-items: flex-start; }
+        .practice-btn, .delivery-link, .action-btn { width: 100%; }
+        .activity-item { align-items: flex-start; }
       }
     </style>
   </head>
-
   <body>
     <header class="topbar">
       <nav class="navbar container" aria-label="Navegación principal">
         <a href="#inicio" class="brand" aria-label="Inicio">
-          <span class="brand-logo">
-            <img src="logo-upla.svg.jpg" alt="Logo de la Universidad Peruana Los Andes" />
-          </span>
+          <span class="brand-logo"><img src="logo-upla.svg.jpg" alt="Logo UPLA" /></span>
           <span>UPLA</span>
         </a>
-
         <div class="nav-links">
           <a href="#inicio">Inicio</a>
           <a href="#entregas">Entregas</a>
           <a href="#cursos">Cursos</a>
           <a href="#unidades">Unidades</a>
         </div>
-
         <button class="nav-cta" type="button">Login</button>
       </nav>
     </header>
@@ -773,21 +360,15 @@
           <div class="hero-copy">
             <p class="eyebrow">Universidad Peruana Los Andes</p>
             <h1>Joshep Emerson<br />Condori Moreno</h1>
-
             <div class="student-meta">
               <span>Código: S03785C</span>
               <span>Ingeniería de Sistemas y Computación</span>
             </div>
-
-            <p class="tagline">
-              “Tecnología, aprendizaje y disciplina para construir soluciones útiles y crear nuevas oportunidades.”
-            </p>
-
+            <p class="tagline">“Tecnología, aprendizaje y disciplina para construir soluciones útiles y crear nuevas oportunidades.”</p>
             <div class="hero-actions">
               <a class="primary-btn" href="#entregas">Ver mis entregas</a>
               <a class="secondary-btn" href="#unidades">Explorar unidades</a>
             </div>
-
             <ul class="info-list">
               <li>Asignatura: Algoritmos y Estructura de Datos</li>
               <li>Universidad: Universidad Peruana Los Andes - UPLA</li>
@@ -799,24 +380,11 @@
             <div class="photo-frame">
               <img src="foto.png.jpg" alt="Joshep Emerson Condori Moreno" />
             </div>
-
             <div class="profile-details">
-              <div class="profile-row">
-                <span>Nombre</span>
-                <strong>Joshep Emerson</strong>
-              </div>
-              <div class="profile-row">
-                <span>Código</span>
-                <strong>S03785C</strong>
-              </div>
-              <div class="profile-row">
-                <span>Carrera</span>
-                <strong>Ingeniería de Sistemas y Computación</strong>
-              </div>
-              <div class="profile-row">
-                <span>Universidad</span>
-                <strong>UPLA</strong>
-              </div>
+              <div class="profile-row"><span>Nombre</span><strong>Joshep Emerson</strong></div>
+              <div class="profile-row"><span>Código</span><strong>S03785C</strong></div>
+              <div class="profile-row"><span>Carrera</span><strong>Ingeniería de Sistemas y Computación</strong></div>
+              <div class="profile-row"><span>Universidad</span><strong>UPLA</strong></div>
             </div>
           </aside>
         </div>
@@ -830,18 +398,9 @@
           </div>
 
           <div class="metrics" aria-label="Estadísticas del curso">
-            <div class="metric-card">
-              <span class="value">06</span>
-              <span class="label">Entregas</span>
-            </div>
-            <div class="metric-card">
-              <span class="value">04</span>
-              <span class="label">Unidades</span>
-            </div>
-            <div class="metric-card">
-              <span class="value">16</span>
-              <span class="label">Semanas</span>
-            </div>
+            <div class="metric-card"><span class="value">06</span><span class="label">Entregas</span></div>
+            <div class="metric-card"><span class="value">04</span><span class="label">Unidades</span></div>
+            <div class="metric-card"><span class="value">16</span><span class="label">Semanas</span></div>
           </div>
 
           <div class="deliveries-grid">
@@ -855,7 +414,6 @@
               </ul>
               <a href="practicas/semana-01.html" class="delivery-link">Ver entrega</a>
             </article>
-
             <article class="delivery-card">
               <span class="delivery-tag">Semana 02</span>
               <h3>Arreglos paralelos</h3>
@@ -864,9 +422,8 @@
                 <li><span>Actividad</span><span>Guía</span></li>
                 <li><span>Práctica</span><span>Aplicación</span></li>
               </ul>
-              <a href="#" class="delivery-link">Ver entrega</a>
+              <a href="practicas/semana-02.html" class="delivery-link">Ver entrega</a>
             </article>
-
             <article class="delivery-card">
               <span class="delivery-tag">Semana 03</span>
               <h3>ArrayList y Vector</h3>
@@ -875,9 +432,8 @@
                 <li><span>Actividad</span><span>Laboratorio</span></li>
                 <li><span>Práctica</span><span>Registro</span></li>
               </ul>
-              <a href="#" class="delivery-link">Ver entrega</a>
+              <a href="practicas/semana-03.html" class="delivery-link">Ver entrega</a>
             </article>
-
             <article class="delivery-card">
               <span class="delivery-tag">Semana 04</span>
               <h3>LinkedList</h3>
@@ -886,9 +442,8 @@
                 <li><span>Actividad</span><span>Comparación</span></li>
                 <li><span>Práctica</span><span>Gestión</span></li>
               </ul>
-              <a href="#" class="delivery-link">Ver entrega</a>
+              <a href="practicas/semana-04.html" class="delivery-link">Ver entrega</a>
             </article>
-
             <article class="delivery-card">
               <span class="delivery-tag">Semana 05</span>
               <h3>Pilas</h3>
@@ -897,9 +452,8 @@
                 <li><span>Actividad</span><span>Práctica</span></li>
                 <li><span>Práctica</span><span>Validación</span></li>
               </ul>
-              <a href="#" class="delivery-link">Ver entrega</a>
+              <a href="practicas/semana-05.html" class="delivery-link">Ver entrega</a>
             </article>
-
             <article class="delivery-card">
               <span class="delivery-tag">Semana 06</span>
               <h3>Colas</h3>
@@ -920,40 +474,22 @@
             <p class="eyebrow">Cursos</p>
             <h2>Mi formación académica</h2>
           </div>
-
           <div class="courses-grid">
             <article class="course-card">
               <div class="course-head">
-                <div>
-                  <p class="eyebrow">Curso actual</p>
-                </div>
+                <div><p class="eyebrow">Curso actual</p></div>
                 <div class="course-badges">
                   <span>IV ciclo</span>
                   <span>03 créditos</span>
                   <span>05h semanales</span>
                 </div>
               </div>
-
               <h3>Algoritmos y Estructuras de Datos</h3>
-              <p>
-                Desarrollo de competencias para modelar soluciones computacionales eficientes,
-                comprender estructuras de datos y aplicar lógica algorítmica en la resolución
-                de problemas reales.
-              </p>
-
+              <p>Desarrollo de competencias para modelar soluciones computacionales eficientes, comprender estructuras de datos y aplicar lógica algorítmica en la resolución de problemas reales.</p>
               <ul class="course-details">
-                <li>
-                  <strong>Docente</strong>
-                   RAUL ENRIQUE FERNANDEZ BEJARANO
-                </li>
-                <li>
-                  <strong>Competencia</strong>
-                  Analizar, diseñar y evaluar algoritmos con criterio de eficiencia
-                </li>
-                <li>
-                  <strong>Metodología</strong>
-                  Prácticas, laboratorios y entregas semanales
-                </li>
+                <li><strong>Docente</strong>RAUL ENRIQUE FERNANDEZ BEJARANO</li>
+                <li><strong>Competencia</strong>Analizar, diseñar y evaluar algoritmos con criterio de eficiencia</li>
+                <li><strong>Metodología</strong>Prácticas, laboratorios y entregas semanales</li>
               </ul>
             </article>
           </div>
@@ -974,7 +510,6 @@
                 <span class="unit-range">Semanas 01 - 04</span>
                 <span class="toggle-icon" aria-hidden="true"></span>
               </button>
-
               <div class="accordion-content">
                 <div class="accordion-body">
                   <div class="week-list">
@@ -983,9 +518,37 @@
                         <span class="week-label">Semana 01</span>
                         <strong>Arreglos bidimensionales</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Ejercicios</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Retroalimentación</span></li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Infografías</span>
+                              <span class="activity-tag">Subir</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-01.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-01.html" download="semana-01-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Ejercicios</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-01.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-01.html" download="semana-01-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 03</span>
+                              <span>Retroalimentación</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-01.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-01.html" download="semana-01-actividad-03.html">Descargar</a>
+                            </div>
+                          </li>
                         </ul>
                       </div>
                       <a href="practicas/semana-01.html" class="practice-btn">Ver práctica</a>
@@ -996,12 +559,40 @@
                         <span class="week-label">Semana 02</span>
                         <strong>Arreglos paralelos y objetos</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Infografías</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Uso de datos paralelos</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Aplicación práctica</span></li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Infografías</span>
+                              <span class="activity-tag">Subir</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-02.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-02.html" download="semana-02-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Uso de datos paralelos</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-02.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-02.html" download="semana-02-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 03</span>
+                              <span>Aplicación práctica</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-02.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-02.html" download="semana-02-actividad-03.html">Descargar</a>
+                            </div>
+                          </li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver práctica</a>
+                      <a href="practicas/semana-02.html" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -1009,12 +600,39 @@
                         <span class="week-label">Semana 03</span>
                         <strong>ArrayList y Vector</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Laboratorio</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Análisis de uso</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Comparación</span></li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Comparación de estructuras</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-03.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-03.html" download="semana-03-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Laboratorio</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-03.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-03.html" download="semana-03-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 03</span>
+                              <span>Registro y análisis</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-03.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-03.html" download="semana-03-actividad-03.html">Descargar</a>
+                            </div>
+                          </li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver práctica</a>
+                      <a href="practicas/semana-03.html" class="practice-btn">Ver práctica</a>
                     </div>
 
                     <div class="week-item">
@@ -1022,12 +640,112 @@
                         <span class="week-label">Semana 04</span>
                         <strong>LinkedList</strong>
                         <ul class="activity-list">
-                          <li class="activity-item"><span class="activity-badge">Actividad 01</span><span>Listado enlazado</span><span class="activity-tag">Subir</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 02</span><span>Implementación</span></li>
-                          <li class="activity-item"><span class="activity-badge">Actividad 03</span><span>Retroalimentación</span></li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Conceptos básicos</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-04.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-04.html" download="semana-04-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Comparación</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-04.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-04.html" download="semana-04-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 03</span>
+                              <span>Gestión de nodos</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-04.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-04.html" download="semana-04-actividad-03.html">Descargar</a>
+                            </div>
+                          </li>
                         </ul>
                       </div>
-                      <a href="#" class="practice-btn">Ver práctica</a>
+                      <a href="practicas/semana-04.html" class="practice-btn">Ver práctica</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span>Unidad II: Estructuras lineales y secuencias</span>
+                <span class="unit-range">Semanas 05 - 08</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <div class="week-list">
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 05</span>
+                        <strong>Pilas</strong>
+                        <ul class="activity-list">
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Práctica</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-05.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-05.html" download="semana-05-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Validación</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-05.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-05.html" download="semana-05-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <a href="practicas/semana-05.html" class="practice-btn">Ver práctica</a>
+                    </div>
+
+                    <div class="week-item">
+                      <div class="week-meta">
+                        <span class="week-label">Semana 06</span>
+                        <strong>Colas</strong>
+                        <ul class="activity-list">
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 01</span>
+                              <span>Infografía</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-06.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-06.html" download="semana-06-actividad-01.html">Descargar</a>
+                            </div>
+                          </li>
+                          <li class="activity-item">
+                            <div class="activity-main">
+                              <span class="activity-badge">Actividad 02</span>
+                              <span>Gestión</span>
+                            </div>
+                            <div class="activity-actions">
+                              <a class="action-btn view" href="practicas/semana-06.html" target="_blank" rel="noreferrer">Visualizar</a>
+                              <a class="action-btn download" href="practicas/semana-06.html" download="semana-06-actividad-02.html">Descargar</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <a href="practicas/semana-06.html" class="practice-btn">Ver práctica</a>
                     </div>
                   </div>
                 </div>
@@ -1044,5 +762,22 @@
         <span>Portafolio académico UPLA</span>
       </div>
     </footer>
+
+    <script>
+      document.querySelectorAll('.accordion-trigger').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.accordion-item');
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.accordion-item').forEach((el) => {
+            el.classList.remove('active');
+            el.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (!isActive) {
+            item.classList.add('active');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

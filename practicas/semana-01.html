@@ -3,480 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semana 01 - Actividad 01 | Portafolio UPLA</title>
+    <title>Semana 01 | Portafolio UPLA</title>
     <style>
-      :root {
-        --bg: #071521;
-        --bg-2: #0c1a2a;
-        --panel: rgba(11, 23, 34, 0.96);
-        --panel-2: rgba(18, 33, 47, 0.98);
-        --line: rgba(145, 200, 255, 0.28);
-        --cyan: #5fe5ff;
-        --blue: #3b9eff;
-        --violet: #a66bff;
-        --purple: #d16dff;
-        --pink: #ff5bcf;
-        --green: #67f5a6;
-        --yellow: #ffb84d;
-        --orange: #ff9b52;
-        --red: #ff6f7d;
-        --text: #ebf7ff;
-        --muted: #bfd8ec;
-        --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
       body {
-        margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top, rgba(63, 194, 255, 0.16), transparent 32%),
-          linear-gradient(180deg, #071521 0%, #081a28 100%);
-      }
-
-      .page {
-        max-width: 1500px;
-        margin: 0 auto;
-        padding: 28px 18px 48px;
-      }
-
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        background: rgba(15, 33, 48, 0.9);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        padding: 10px 18px;
-        margin-bottom: 18px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-
-      .brand-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, rgba(95, 229, 255, 0.28), rgba(166, 107, 255, 0.18));
-        border: 1px solid rgba(95, 229, 255, 0.5);
-        font-weight: 900;
-        color: var(--cyan);
-        font-size: 1.2rem;
-      }
-
-      .brand-name {
-        font-size: clamp(1.3rem, 2vw, 2rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-      }
-
-      .topbar .back {
-        text-decoration: none;
-        color: var(--text);
-        border: 1px solid rgba(255,255,255,0.15);
-        background: rgba(255,255,255,0.02);
-        padding: 10px 16px;
-        border-radius: 999px;
-        font-weight: 700;
-      }
-
-      .title {
-        text-align: center;
-        font-size: clamp(2.2rem, 4vw, 4rem);
-        letter-spacing: -0.04em;
-        margin: 18px 0 22px;
-        font-weight: 900;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 18px;
-      }
-
-      .poster {
-        border-radius: 18px;
-        border: 1px solid rgba(132, 196, 255, 0.35);
-        background: rgba(11, 20, 28, 0.96);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .poster-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: linear-gradient(135deg, rgba(95, 229, 255, 0.75), rgba(89, 192, 255, 0.9));
-        color: #071521;
-        padding: 16px 18px;
-        font-weight: 900;
-        font-size: clamp(1.2rem, 2vw, 2.2rem);
-        text-align: center;
-        justify-content: center;
-      }
-
-      .poster-header .lang-badge {
-        width: 52px;
-        height: 52px;
-        border-radius: 12px;
-        background: rgba(12, 31, 44, 0.18);
-        border: 1px solid rgba(12, 31, 44, 0.5);
-        display: grid;
-        place-items: center;
-        font-size: 0.85rem;
-        padding: 5px;
-      }
-
-      .poster-body {
-        padding: 18px;
-        display: grid;
-        gap: 14px;
-      }
-
-      .mini-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-      }
-
-      .panel {
-        background: rgba(17, 34, 47, 0.92);
-        border: 1px solid rgba(159, 219, 255, 0.25);
-        border-radius: 14px;
-        padding: 12px;
-      }
-
-      .panel h3 {
-        margin: 0 0 10px;
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--cyan);
-      }
-
-      .figure {
-        min-height: 110px;
-        display: grid;
-        place-items: center;
-        background: rgba(255,255,255,0.02);
-        border: 1px dashed rgba(111, 230, 255, 0.25);
-        border-radius: 10px;
-      }
-
-      .boxes {
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .box {
-        width: 40px;
-        height: 40px;
-        border: 2px solid var(--cyan);
-        border-radius: 8px;
-        display: grid;
-        place-items: center;
-        color: var(--cyan);
-        font-weight: 800;
-        background: rgba(95, 229, 255, 0.08);
-      }
-
-      .box.green { border-color: var(--green); color: var(--green); background: rgba(103,245,166,0.1); }
-      .box.purple { border-color: var(--violet); color: var(--violet); background: rgba(166,107,255,0.08); }
-      .box.orange { border-color: var(--orange); color: var(--orange); background: rgba(255,155,82,0.08); }
-      .box.red { border-color: var(--red); color: var(--red); background: rgba(255,111,125,0.08); }
-
-      .accent { color: var(--pink); font-weight: 800; }
-
-      .codebox {
-        background: rgba(12, 21, 33, 0.9);
-        border: 1px solid rgba(95, 229, 255, 0.35);
-        border-radius: 12px;
-        padding: 12px;
-        color: var(--text);
-        font-family: "Consolas", monospace;
-        line-height: 1.5;
-        font-size: 0.82rem;
-      }
-
-      .big-number {
-        font-size: clamp(2.3rem, 5vw, 4rem);
-        font-weight: 900;
-        letter-spacing: -0.05em;
-        color: var(--cyan);
-        text-align: center;
-      }
-
-      .list {
-        display: grid;
-        gap: 8px;
-        padding-left: 16px;
         margin: 0;
-        color: var(--muted);
+        background: linear-gradient(180deg, #07121f, #0d1d2d);
+        color: #edf7ff;
       }
-
-      .list li { line-height: 1.5; }
-
-      .list strong { color: var(--text); }
-
-      .steps {
-        display: grid;
-        gap: 8px;
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
       }
-
-      .step {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        padding: 8px 10px;
-        border-radius: 10px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid rgba(255,255,255,0.05);
-        color: var(--muted);
+      .card {
+        background: rgba(16,35,52,.95);
+        border: 1px solid rgba(142,182,214,.18);
+        border-radius: 24px;
+        box-shadow: 0 18px 40px rgba(4, 9, 17, 0.35);
+        padding: 2rem;
       }
-
-      .step-num {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: rgba(95,229,255,0.1);
-        border: 1px solid rgba(95,229,255,0.35);
-        color: var(--cyan);
-        font-weight: 800;
-        flex-shrink: 0;
+      h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: .8rem; }
+      p { color: #b5cedf; line-height: 1.7; }
+      .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top: 1.5rem; }
+      .btn {
+        display: inline-flex; align-items:center; justify-content:center; padding: .85rem 1.2rem; border-radius: 999px; text-decoration:none; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .7rem;
       }
-
-      .result {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-        background: rgba(95,229,255,0.08);
-        border: 1px solid rgba(95,229,255,0.32);
-        border-radius: 12px;
-        padding: 12px 14px;
-      }
-
-      .muted-label {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--muted);
-      }
-
-      .result strong {
-        font-size: clamp(1.5rem, 3vw, 2.6rem);
-        color: var(--cyan);
-      }
-
-      .poster.eliminar .panel:nth-child(1) { background: rgba(255, 96, 134, 0.04); }
-      .poster.modificar .panel:nth-child(2) { background: rgba(101, 255, 185, 0.04); }
-      .poster.insertar .panel:nth-child(3) { background: rgba(255, 184, 77, 0.04); }
-      .poster.sumar .panel:nth-child(4) { background: rgba(166,107,255,0.04); }
-
-      @media (max-width: 680px) {
-        .page { padding: 18px 12px 36px; }
-        .topbar { flex-wrap: wrap; }
-        .mini-grid { grid-template-columns: 1fr; }
-      }
+      .primary { background: linear-gradient(135deg, #53d8ff, #8f5bff); color: #fff; }
+      .secondary { background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.12); color: #fff; }
+      ul { color: #b5cedf; margin-left: 1.2rem; }
     </style>
   </head>
   <body>
-    <div class="page">
-      <header class="topbar">
-        <div class="brand">
-          <div class="brand-icon">&lt;/&gt;</div>
-          <div class="brand-name">Semana 01 · Actividad 01</div>
+    <main>
+      <div class="card">
+        <p style="text-transform:uppercase; letter-spacing:.12em; color:#53d8ff; font-size:.72rem; font-weight:800;">Semana 01</p>
+        <h1>Arreglos bidimensionales</h1>
+        <p>Contenido de la actividad para la semana 01. Aquí puedes visualizar la entrega y descargar el documento de apoyo.</p>
+        <ul>
+          <li>Infografía sobre arreglos bidimensionales</li>
+          <li>Ejercicios propuestos</li>
+          <li>Retroalimentación del docente</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="semana-01.html" download>Descargar</a>
+          <a class="btn secondary" href="../index.html#unidades">Volver</a>
         </div>
-        <a href="../index.html" class="back">Volver al portafolio</a>
-      </header>
-
-      <h1 class="title">Infografías de arreglos</h1>
-
-      <div class="grid">
-        <article class="poster eliminar">
-          <div class="poster-header"><span class="lang-badge">Java</span>Eliminar un elemento</div>
-          <div class="poster-body">
-            <div class="mini-grid">
-              <div class="panel">
-                <h3>¿Qué hace?</h3>
-                <div class="figure">
-                  <div class="boxes">
-                    <span class="box">1</span>
-                    <span class="box green">2</span>
-                    <span class="box purple">3</span>
-                  </div>
-                </div>
-                <p style="margin:10px 0 0; color: var(--muted);">Quitar el primer elemento que coincide con el valor indicado.</p>
-              </div>
-              <div class="panel">
-                <h3>Datos del ejemplo</h3>
-                <div class="boxes" style="margin-bottom: 12px;">
-                  <span class="box">10</span><span class="box">20</span><span class="box">30</span><span class="box">40</span><span class="box green">23</span>
-                </div>
-                <div class="result"><span class="muted-label">tope</span><strong>4</strong></div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se elimina en posición 2.</p>
-              </div>
-              <div class="panel">
-                <h3>Idea clave</h3>
-                <div class="big-number">4 → 3</div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se reduce el tamaño real del arreglo tras mover cada posición.</p>
-              </div>
-            </div>
-
-            <div class="panel">
-              <h3>Código modificado</h3>
-              <div class="codebox">
-                <span style="color: var(--cyan);">void eliminarYDesplazarDerecha(int pos)</span> {<br />
-                &nbsp;&nbsp;if (pos &lt; 0 || pos &gt;= tope) return;<br />
-                &nbsp;&nbsp;for (int i = pos; i &lt; tope - 1; i++) {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;arr[i] = arr[i + 1];<br />
-                &nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;arr[tope - 1] = 0;<br />
-                &nbsp;&nbsp;tope--;<br />
-                }
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="poster modificar">
-          <div class="poster-header"><span class="lang-badge">Java</span>Modificar un elemento</div>
-          <div class="poster-body">
-            <div class="mini-grid">
-              <div class="panel">
-                <h3>¿Qué hace?</h3>
-                <div class="figure">
-                  <div class="boxes">
-                    <span class="box">35</span><span class="box">40</span><span class="box">27</span>
-                  </div>
-                </div>
-                <p style="margin:10px 0 0; color: var(--muted);">Busca un valor específico y lo reemplaza por uno nuevo.</p>
-              </div>
-              <div class="panel">
-                <h3>Datos del ejemplo</h3>
-                <div class="boxes" style="margin-bottom: 12px;">
-                  <span class="box">35</span><span class="box">40</span><span class="box">27</span><span class="box">29</span><span class="box">23</span>
-                </div>
-                <div class="result"><span class="muted-label">tope</span><strong>5</strong></div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se reemplaza el valor 27 por 50 en índice 2.</p>
-              </div>
-              <div class="panel">
-                <h3>Idea clave</h3>
-                <div class="big-number">27 → 50</div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se mantiene el arreglo en orden sin alterar la longitud.</p>
-              </div>
-            </div>
-
-            <div class="panel">
-              <h3>Código completo y explicado</h3>
-              <div class="codebox">
-                <span style="color: var(--cyan);">public void modificarElemento(int index, int nuevo)</span> {<br />
-                &nbsp;&nbsp;if (index &lt; 0 || index &gt;= tope) return;<br />
-                &nbsp;&nbsp;arr[index] = nuevo;<br />
-                &nbsp;&nbsp;System.out.println("Elemento modificado.");<br />
-                }
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="poster insertar">
-          <div class="poster-header"><span class="lang-badge">Java</span>Insertar en una posición</div>
-          <div class="poster-body">
-            <div class="mini-grid">
-              <div class="panel">
-                <h3>¿Qué hace?</h3>
-                <div class="figure">
-                  <div class="boxes">
-                    <span class="box">10</span><span class="box">20</span><span class="box">30</span>
-                  </div>
-                </div>
-                <p style="margin:10px 0 0; color: var(--muted);">Abre espacio para un nuevo dato sin perder los valores actuales.</p>
-              </div>
-              <div class="panel">
-                <h3>Datos del ejemplo</h3>
-                <div class="boxes" style="margin-bottom: 12px;">
-                  <span class="box">10</span><span class="box">20</span><span class="box">30</span><span class="box">40</span><span class="box">50</span>
-                </div>
-                <div class="result"><span class="muted-label">tope</span><strong>5</strong></div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se inserta el valor en la posición indicada.</p>
-              </div>
-              <div class="panel">
-                <h3>Idea clave</h3>
-                <div class="big-number">5 → 6</div>
-                <p style="margin:10px 0 0; color: var(--muted);">Primero se abre espacio y luego se inserta el valor nuevo.</p>
-              </div>
-            </div>
-
-            <div class="panel">
-              <h3>Paso a paso</h3>
-              <div class="steps">
-                <div class="step"><div class="step-num">1</div><div>Recibir dato y posición.</div></div>
-                <div class="step"><div class="step-num">2</div><div>Desplazar elementos hacia la derecha.</div></div>
-                <div class="step"><div class="step-num">3</div><div>Colocar el valor en la posición libre.</div></div>
-                <div class="step"><div class="step-num">4</div><div>Aumentar el tope.</div></div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="poster sumar">
-          <div class="poster-header"><span class="lang-badge">Java</span>Sumar todos los elementos</div>
-          <div class="poster-body">
-            <div class="mini-grid">
-              <div class="panel">
-                <h3>¿Qué hace?</h3>
-                <div class="figure">
-                  <div class="boxes">
-                    <span class="box purple">35</span><span class="box purple">40</span><span class="box purple">27</span>
-                  </div>
-                </div>
-                <p style="margin:10px 0 0; color: var(--muted);">Acumula los datos en una sola variable.</p>
-              </div>
-              <div class="panel">
-                <h3>Datos del ejemplo</h3>
-                <div class="boxes" style="margin-bottom: 12px;">
-                  <span class="box">35</span><span class="box">40</span><span class="box">27</span><span class="box">29</span><span class="box">23</span>
-                </div>
-                <div class="result"><span class="muted-label">Suma</span><strong>154</strong></div>
-                <p style="margin:10px 0 0; color: var(--muted);">Se visitan 5 datos.</p>
-              </div>
-              <div class="panel">
-                <h3>Idea clave</h3>
-                <div class="big-number">suma</div>
-                <p style="margin:10px 0 0; color: var(--muted);">Un acumulador conserva el valor total acumulado de todos los elementos.</p>
-              </div>
-            </div>
-
-            <div class="panel">
-              <h3>Código completo</h3>
-              <div class="codebox">
-                <span style="color: var(--cyan);">int sumarElementos()</span> {<br />
-                &nbsp;&nbsp;int suma = 0;<br />
-                &nbsp;&nbsp;for (int i = 0; i &lt; tope; i++) {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;suma += arr[i];<br />
-                &nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;return suma;<br />
-                }
-              </div>
-            </div>
-          </div>
-        </article>
       </div>
-    </div>
+    </main>
   </body>
 </html>
