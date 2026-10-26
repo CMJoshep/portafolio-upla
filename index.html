@@ -145,35 +145,6 @@
         100% { transform: translateY(0); }
       }
 
-      .section-grid {
-        width: min(1200px, 92%);
-        margin: 0 auto 36px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(200px, 1fr));
-        gap: 22px;
-      }
-
-      .mini-card {
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 20px;
-        padding: 18px 18px 16px;
-        text-align: center;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
-        transition: 0.3s ease;
-      }
-
-      .mini-card:hover {
-        transform: translateY(-6px);
-        background: rgba(255, 255, 255, 0.18);
-      }
-
-      .mini-card h3 {
-        font-size: 18px;
-        line-height: 1.4;
-        font-weight: 700;
-      }
-
       @media (max-width: 1000px) {
         header {
           height: auto;
@@ -203,23 +174,6 @@
           padding-bottom: 10px;
         }
       }
-
-      @media (max-width: 720px) {
-        .section-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      @media (max-width: 540px) {
-        .section-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .logo-header {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
     </style>
   </head>
   <body>
@@ -237,9 +191,8 @@
 
       <nav>
         <a href="#inicio">Inicio</a>
-        <a href="#sobremi">Sobre mí</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#unidades">Unidades</a>
+        <a href="#algoritmos">Algoritmos</a>
+        <a href="#taller">Taller</a>
       </nav>
     </header>
 
@@ -257,54 +210,20 @@
       </section>
     </div>
 
-    <section class="section-grid" id="unidades" aria-label="Otros cursos">
-      <a href="#algoritmos" class="mini-card">
-        <h3>Algoritmos</h3>
-      </a>
-      <a href="#taller" class="mini-card">
-        <h3>Taller</h3>
-      </a>
-      <a href="#dashboard" class="mini-card">
-        <h3>Dashboard</h3>
-      </a>
-      <a href="#sobremi" class="mini-card">
-        <h3>Sobre mí</h3>
-      </a>
-    </section>
-
-    <section id="algoritmos" style="width:min(1200px,92%);margin:0 auto 60px; padding:20px 0;">
-      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
+    <section id="algoritmos" style="width:min(1200px,92%);margin:0 auto 52px; padding:20px 0;">
+      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:22px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
         <h2 style="font-size:28px; margin-bottom:10px;">Algoritmos y Estructura de Datos</h2>
         <p style="font-size:17px; line-height:1.7; color:#ebf5ff; opacity:0.9;">
-          En esta sección se muestran los trabajos, actividades, entregas y metodologías del curso académico.
-          El enfoque está en estructuras de datos, lógica algorítmica, ordenamiento, búsqueda y resolución de problemas.
+          En esta sección se muestran los trabajos, actividades y entregas del curso académico. El enfoque principal es la lógica algorítmica, búsquedas, ordenamientos, estructuras de datos y resolución de problemas.
         </p>
       </div>
     </section>
 
-    <section id="taller" style="width:min(1200px,92%);margin:0 auto 60px; padding:20px 0;">
-      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
+    <section id="taller" style="width:min(1200px,92%);margin:0 auto 70px; padding:20px 0;">
+      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:22px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
         <h2 style="font-size:28px; margin-bottom:10px;">Taller de Desarrollo de Aplicaciones I</h2>
         <p style="font-size:17px; line-height:1.7; color:#ebf5ff; opacity:0.9;">
-          Aquí se presentan las actividades, aplicaciones y entregas del taller, con énfasis en diseño, programación y desarrollo de soluciones prácticas.
-        </p>
-      </div>
-    </section>
-
-    <section id="dashboard" style="width:min(1200px,92%);margin:0 auto 60px; padding:20px 0;">
-      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
-        <h2 style="font-size:28px; margin-bottom:10px;">Dashboard</h2>
-        <p style="font-size:17px; line-height:1.7; color:#ebf5ff; opacity:0.9;">
-          Área de seguimiento académico con proyectos, avances y entregas del portafolio universitario.
-        </p>
-      </div>
-    </section>
-
-    <section id="sobremi" style="width:min(1200px,92%);margin:0 auto 80px; padding:20px 0;">
-      <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:24px 22px; box-shadow:0 20px 40px rgba(0,0,0,.18);">
-        <h2 style="font-size:28px; margin-bottom:10px;">Sobre mí</h2>
-        <p style="font-size:17px; line-height:1.7; color:#ebf5ff; opacity:0.9;">
-          Soy Joshep Emerson Condori Moreno, estudiante de Ingeniería de Sistemas y Computación, interesado en el desarrollo de software, la resolución de problemas y la creación de soluciones eficientes y útiles.
+          Aquí se presentan las actividades y entregas del taller, con enfoque en desarrollo de software, diseño de soluciones, programación y aplicación práctica de conceptos.
         </p>
       </div>
     </section>
