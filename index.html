@@ -6,53 +6,52 @@
     <title>UPLA | Portafolio</title>
     <style>
       :root {
-        --bg-deep: #020c17;
-        --bg-mid: #071d2e;
-        --panel: rgba(8, 20, 32, 0.94);
-        --panel-2: rgba(12, 26, 40, 0.96);
-        --panel-3: rgba(19, 31, 42, 0.9);
-        --line: rgba(111, 200, 255, 0.26);
-        --line-soft: rgba(125, 147, 180, 0.18);
-        --cyan: #59d7ff;
-        --cyan-strong: #74dfff;
-        --cyan-soft: rgba(89, 215, 255, 0.15);
-        --violet: #8b5cf6;
-        --violet-soft: rgba(139, 92, 246, 0.12);
+        --bg-900: #020c16;
+        --bg-800: #081b2a;
+        --bg-700: #0d2237;
+        --panel: rgba(8, 22, 34, 0.92);
+        --panel-strong: rgba(12, 27, 42, 0.95);
+        --line: rgba(89, 215, 255, 0.28);
+        --line-soft: rgba(130, 149, 170, 0.24);
+        --cyan: #5ad9ff;
+        --cyan-strong: #81e6ff;
+        --violet: #7a73ff;
         --text: #edf9ff;
-        --muted: #b7cedd;
-        --muted-2: #9cb8ca;
-        --card-glow: rgba(89, 215, 255, 0.22);
+        --muted: #b9cfe2;
+        --muted-soft: #a9bfd1;
+        --card-bg: rgba(12, 29, 40, 0.92);
+        --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
       }
 
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
+        min-height: 100vh;
         font-family: Arial, Helvetica, sans-serif;
-        background:
-          radial-gradient(circle at 15% 8%, rgba(89, 215, 255, 0.10), transparent 16%),
-          radial-gradient(circle at 88% 30%, rgba(139, 92, 246, 0.12), transparent 22%),
-          linear-gradient(180deg, #020b13 0%, #071c2f 100%);
         color: var(--text);
+        background:
+          radial-gradient(circle at 15% 10%, rgba(90, 217, 255, 0.12), transparent 18%),
+          radial-gradient(circle at 80% 18%, rgba(122, 115, 255, 0.10), transparent 20%),
+          linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 100%);
       }
 
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
-      section, main { scroll-margin-top: 90px; }
 
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 20;
-        background: rgba(3, 11, 20, 0.8);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        z-index: 30;
+        background: rgba(6, 15, 24, 0.7);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
 
       .navbar {
-        height: 72px;
-        width: min(1260px, calc(100% - 20px));
+        width: min(1280px, calc(100% - 18px));
         margin: 0 auto;
+        min-height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -63,24 +62,25 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        font-size: 1.02rem;
         font-weight: 800;
-        font-size: 1.04rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--text);
       }
 
       .brand-mark {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         border-radius: 8px;
-        background: linear-gradient(135deg, #b4efff 0%, #63d7ff 35%, #8f68ff 100%);
-        box-shadow: 0 0 22px rgba(89, 215, 255, 0.42);
+        background: linear-gradient(135deg, #a8eeff, #59d9ff 35%, #8a6dff);
+        box-shadow: 0 0 18px rgba(89, 217, 255, 0.45);
       }
 
       .nav {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 24px;
         color: var(--muted);
         font-size: 0.72rem;
@@ -92,145 +92,141 @@
         color: var(--muted);
       }
 
+      .nav a:hover { color: var(--text); }
+
       .login-btn {
-        border: 1px solid rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.12);
         background: rgba(255,255,255,0.03);
-        color: var(--text);
         border-radius: 999px;
         padding: 10px 18px;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+        color: var(--text);
       }
 
       .main-wrap {
         width: min(1180px, calc(100% - 18px));
-        margin: 28px auto 36px;
+        margin: 26px auto 40px;
       }
 
       .panel {
-        background: linear-gradient(180deg, rgba(4, 17, 29, 0.98), rgba(7, 21, 35, 0.98));
+        background: linear-gradient(180deg, rgba(6, 19, 30, 0.96), rgba(8, 20, 32, 0.96));
         border: 1px solid var(--line);
         border-radius: 16px;
-        box-shadow: 0 18px 32px rgba(0,0,0,0.18);
+        box-shadow: var(--shadow);
         overflow: hidden;
       }
 
       .panel-head {
+        min-height: 55px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        min-height: 52px;
-        padding: 10px 22px 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 12px 22px;
         color: var(--muted);
-      }
-
-      .panel-head .label {
-        font-size: 0.88rem;
-        color: var(--muted);
+        font-size: 0.96rem;
       }
 
       .panel-head strong {
         color: var(--text);
-        font-size: 0.9rem;
+        font-weight: 800;
       }
 
       .panel-body {
-        padding: 18px 20px 18px;
+        padding: 18px 18px 20px;
       }
 
       .title-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 14px;
-        min-height: 52px;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        gap: 16px;
+        min-height: 42px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         margin-bottom: 10px;
-        padding: 0 0 7px;
       }
 
-      .week-wrap {
+      .week-label-wrap {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
       }
 
       .dot {
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #62e3ff, #8c6eff);
-        box-shadow: 0 0 18px rgba(89, 215, 255, 0.7);
+        background: linear-gradient(135deg, #8ce9ff, #7a73ff);
+        box-shadow: 0 0 14px rgba(98, 225, 255, 0.7);
       }
 
       .week-title {
+        font-size: 1.1rem;
         font-weight: 800;
-        font-size: 1.06rem;
-        color: var(--text);
+        letter-spacing: -0.03em;
       }
 
       .count {
-        font-size: 0.84rem;
-        color: var(--muted-2);
+        color: var(--muted-soft);
+        font-size: 0.9rem;
       }
 
       .unit-title {
-        margin: 18px 0 6px;
-        font-size: 1.06rem;
-        color: var(--text);
-        font-weight: 700;
+        margin: 18px 0 8px;
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
       }
 
-      .unit-sub {
-        margin: 0 0 18px;
+      .unit-subtitle {
+        margin: 0 0 4px;
+        font-size: 0.97rem;
+        font-weight: 800;
         color: var(--text);
-        font-size: 0.96rem;
-        font-weight: 700;
       }
 
       .unit-desc {
         margin: 0 0 18px;
-        font-size: 0.96rem;
         color: var(--muted);
-        line-height: 1.55;
+        font-size: 0.94rem;
+        line-height: 1.5;
+        max-width: 760px;
       }
 
-      .cards {
+      .cards-grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(170px, 1fr));
-        gap: 16px 18px;
+        grid-template-columns: repeat(4, minmax(190px, 1fr));
+        gap: 18px 16px;
       }
 
       .card {
-        background: linear-gradient(180deg, rgba(10, 24, 34, 0.92), rgba(12, 22, 31, 0.94));
-        border: 1px solid rgba(128, 175, 219, 0.26);
+        background: linear-gradient(180deg, rgba(12, 27, 39, 0.95), rgba(8, 22, 32, 0.95));
+        border: 1px solid rgba(118, 174, 214, 0.26);
         border-radius: 12px;
         overflow: hidden;
-        min-height: 210px;
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+        min-height: 220px;
       }
 
-      .card-top {
+      .card-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        min-height: 34px;
+        min-height: 32px;
         padding: 8px 10px 7px;
-        background: rgba(17, 36, 46, 0.72);
-        border-bottom: 1px solid rgba(255,255,255,0.03);
+        background: rgba(17, 36, 48, 0.76);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       }
 
       .brand-mini {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-size: 0.52rem;
+        font-size: 0.5rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+        font-weight: 800;
       }
 
       .brand-mini::before {
@@ -239,41 +235,41 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #7fe0ff, #a0b3ff);
+        background: linear-gradient(135deg, #d4f6ff, #6cd9ff 45%, #8a6dff);
       }
 
       .tag-mini {
         font-size: 0.48rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--muted-2);
+        color: var(--muted-soft);
       }
 
       .card-body {
-        padding: 12px 12px 10px;
-        background: linear-gradient(180deg, rgba(19, 37, 47, 0.88), rgba(10, 24, 34, 0.92));
-      }
-
-      .preview {
-        background: linear-gradient(180deg, rgba(8, 30, 36, 0.9), rgba(15, 31, 36, 0.9));
-        border: 1px solid rgba(111, 200, 255, 0.18);
-        border-radius: 10px;
         padding: 12px 10px 10px;
+        background: linear-gradient(180deg, rgba(13, 31, 42, 0.92), rgba(10, 25, 35, 0.92));
       }
 
-      .preview-top {
+      .mini-figure {
+        background: linear-gradient(180deg, rgba(8, 28, 35, 0.9), rgba(15, 33, 39, 0.9));
+        border: 1px solid rgba(89, 217, 255, 0.18);
+        border-radius: 10px;
+        padding: 10px 10px 8px;
+      }
+
+      .mini-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 10px;
       }
 
-      .circle {
+      .mini-circle {
         width: 26px;
         height: 26px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #c1ecff, #74dfff 50%, #8d7bff);
+        background: linear-gradient(135deg, #d6f3ff, #90dfff, #7a73ff);
       }
 
       .mini-bars {
@@ -284,54 +280,55 @@
       }
 
       .mini-bars span {
-        display: inline-block;
+        display: block;
         height: 7px;
         border-radius: 999px;
-        background: rgba(109, 157, 180, 0.22);
+        background: rgba(120, 163, 182, 0.28);
       }
 
-      .mini-bars span:first-child { width: 70%; }
-      .mini-bars span:nth-child(2) { width: 50%; }
-      .mini-bars span:nth-child(3) { width: 30%; }
+      .mini-bars span:nth-child(1) { width: 72%; }
+      .mini-bars span:nth-child(2) { width: 48%; }
+      .mini-bars span:nth-child(3) { width: 32%; }
 
-      .block-grid {
+      .mini-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 7px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        margin-bottom: 8px;
       }
 
-      .block-grid span {
+      .mini-grid span {
         display: block;
         height: 18px;
         border-radius: 6px;
-        background: linear-gradient(90deg, rgba(89, 215, 255, 0.12), rgba(139, 92, 246, 0.12));
-        border: 1px solid rgba(255,255,255,0.04);
+        background: linear-gradient(90deg, rgba(90, 217, 255, 0.13), rgba(122, 115, 255, 0.12));
+        border: 1px solid rgba(255,255,255, 0.04);
       }
 
-      .detail-list {
+      .mini-list {
         display: grid;
         gap: 6px;
-        margin-top: 10px;
       }
 
-      .detail-list div {
+      .mini-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
+        gap: 6px;
+        font-size: 0.5rem;
         padding: 4px 6px;
-        border-radius: 5px;
+        border-radius: 6px;
         background: rgba(255,255,255,0.02);
       }
 
-      .detail-list .key {
-        font-size: 0.47rem;
+      .mini-item .k {
+        font-size: 0.46rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--muted-2);
+        color: var(--muted-soft);
       }
 
-      .detail-list .val {
+      .mini-item .v {
         font-size: 0.48rem;
         color: var(--text);
       }
@@ -340,7 +337,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 12px 12px 14px;
+        min-height: 48px;
+        padding: 8px 12px 12px;
         border-top: 1px solid rgba(255,255,255,0.03);
       }
 
@@ -349,239 +347,235 @@
         height: 8px;
         border-radius: 50%;
         background: var(--cyan);
-        box-shadow: 0 0 12px rgba(89, 215, 255, 0.6);
+        box-shadow: 0 0 12px rgba(90, 217, 255, 0.5);
       }
 
-      .card-footer .title {
+      .card-footer .text {
+        font-size: 0.86rem;
         font-weight: 700;
-        font-size: 0.88rem;
         color: var(--text);
       }
 
       @media (max-width: 980px) {
-        .cards { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+        .cards-grid { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
       }
 
-      @media (max-width: 620px) {
+      @media (max-width: 640px) {
         .nav { display: none; }
-        .cards { grid-template-columns: 1fr; }
+        .cards-grid { grid-template-columns: 1fr; }
         .panel-head { padding-left: 16px; padding-right: 16px; }
-        .panel-body { padding-left: 14px; padding-right: 14px; }
+        .panel-body { padding-left: 12px; padding-right: 12px; }
       }
     </style>
   </head>
   <body id="inicio">
     <header class="topbar">
       <nav class="navbar" aria-label="Navegación principal">
-        <a href="#inicio" class="brand" aria-label="Inicio">
+        <a href="#inicio" class="brand" aria-label="Ir a inicio">
           <span class="brand-mark"></span>
           <span>UPLA</span>
         </a>
-        <div class="nav">
+
+        <div class="nav" aria-label="Menú principal">
           <a href="#inicio">Inicio</a>
           <a href="#entregas">Entregas</a>
           <a href="#unidades">Unidades</a>
         </div>
+
         <button class="login-btn" type="button">Login</button>
       </nav>
     </header>
 
-    <main class="main-wrap" id="inicio-main">
-      <section class="panel" id="entregas" aria-label="Semana académica">
+    <main class="main-wrap">
+      <section id="entregas" class="panel" aria-label="Semana académica">
         <div class="panel-head">
-          <div class="label"><strong>Unidad 2</strong> Gestión de datos académicos: 1 semana, 0 documentos y 30 infografías.</div>
+          <span><strong>Unidad 2</strong> Gestión de datos académicos: 1 semana, 0 documentos y 30 infografías.</span>
         </div>
 
         <div class="panel-body">
           <div class="title-row">
-            <div class="week-wrap">
+            <div class="week-label-wrap">
               <span class="dot"></span>
               <span class="week-title">Semana 5</span>
             </div>
-            <div class="count">30 infografías</div>
+            <span class="count">30 infografías</span>
           </div>
 
           <h2 class="unit-title">Métodos de gestión académica</h2>
-          <p class="unit-sub">Actividad 1: Métodos de la actividad alumno</p>
+          <p class="unit-subtitle">Actividad 1: Métodos de la actividad alumno</p>
           <p class="unit-desc">Búsqueda, listado, ordenamiento y consultas sobre el arreglo de alumnos, con el código del proyecto.</p>
 
-          <div class="cards" id="unidades">
+          <div id="unidades" class="cards-grid" aria-label="Actividades académicas">
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Nombre</span><span class="val">Alumno</span></div>
-                    <div><span class="key">Curso</span><span class="val">UPLA</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Nombre</span><span class="v">Alumno</span></div>
+                    <div class="mini-item"><span class="k">Curso</span><span class="v">UPLA</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">1. Buscar por nombre</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">1. Buscar por nombre</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Carrera</span><span class="val">UPLA</span></div>
-                    <div><span class="key">Lista</span><span class="val">Matriculados</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Carrera</span><span class="v">UPLA</span></div>
+                    <div class="mini-item"><span class="k">Lista</span><span class="v">Matriculados</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">2. Listar alumnos por carrera</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">2. Listar alumnos por carrera</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Orden</span><span class="val">Apellido</span></div>
-                    <div><span class="key">Filtro</span><span class="val">Promedio</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Orden</span><span class="v">Apellido</span></div>
+                    <div class="mini-item"><span class="k">Filtro</span><span class="v">Promedio</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">3. Ordenar por apellidos</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">3. Ordenar por apellidos</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Puntaje</span><span class="val">Máx</span></div>
-                    <div><span class="key">Rango</span><span class="val">Notas</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Puntaje</span><span class="v">Máx</span></div>
+                    <div class="mini-item"><span class="k">Rango</span><span class="v">Notas</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">4. Ordenar por calificación final</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">4. Ordenar por calificación final</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Gestión</span><span class="val">Lista</span></div>
-                    <div><span class="key">Reporte</span><span class="val">Datos</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Gestión</span><span class="v">Lista</span></div>
+                    <div class="mini-item"><span class="k">Reporte</span><span class="v">Datos</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">5. Gestión de alumnos</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">5. Gestión de alumnos</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Estado</span><span class="val">Gestión</span></div>
-                    <div><span class="key">Validar</span><span class="val">Rango</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Estado</span><span class="v">Gestión</span></div>
+                    <div class="mini-item"><span class="k">Validar</span><span class="v">Rango</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">6. Localizar líder académico</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">6. Localizar líder académico</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Alumno</span><span class="val">Reprobado</span></div>
-                    <div><span class="key">Análisis</span><span class="val">Notas</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Alumno</span><span class="v">Reprobado</span></div>
+                    <div class="mini-item"><span class="k">Análisis</span><span class="v">Notas</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">7. Obtener último alumno reprobado</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">7. Obtener último alumno reprobado</span></div>
             </article>
 
             <article class="card">
-              <div class="card-top">
+              <div class="card-head">
                 <span class="brand-mini">UPLA</span>
                 <span class="tag-mini">Infografía</span>
               </div>
               <div class="card-body">
-                <div class="preview">
-                  <div class="preview-top">
-                    <span class="circle"></span>
+                <div class="mini-figure">
+                  <div class="mini-top">
+                    <span class="mini-circle"></span>
                     <div class="mini-bars"><span></span><span></span><span></span></div>
                   </div>
-                  <div class="block-grid"><span></span><span></span></div>
-                  <div class="detail-list">
-                    <div><span class="key">Eliminar</span><span class="val">Carrera</span></div>
-                    <div><span class="key">Estado</span><span class="val">Actual</span></div>
+                  <div class="mini-grid"><span></span><span></span></div>
+                  <div class="mini-list">
+                    <div class="mini-item"><span class="k">Eliminar</span><span class="v">Carrera</span></div>
+                    <div class="mini-item"><span class="k">Estado</span><span class="v">Actual</span></div>
                   </div>
                 </div>
               </div>
-              <div class="card-footer"><span class="bullet"></span><span class="title">8. Eliminar por carrera</span></div>
+              <div class="card-footer"><span class="bullet"></span><span class="text">8. Eliminar por carrera</span></div>
             </article>
           </div>
         </div>
       </section>
     </main>
-
-    <script>
-      if (!location.hash) {
-        location.hash = '#inicio';
-      }
-    </script>
   </body>
 </html>
