@@ -38,6 +38,7 @@
 
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
+      section, main { scroll-margin-top: 90px; }
 
       .topbar {
         position: sticky;
@@ -369,22 +370,24 @@
       }
     </style>
   </head>
-  <body>
+  <body id="inicio">
     <header class="topbar">
       <nav class="navbar" aria-label="Navegación principal">
-        <div class="brand"><span class="brand-mark"></span> UPLA</div>
+        <a href="#inicio" class="brand" aria-label="Inicio">
+          <span class="brand-mark"></span>
+          <span>UPLA</span>
+        </a>
         <div class="nav">
-          <a href="#">Inicio</a>
-          <a href="#">Entregas</a>
-          <a href="#">Cursos</a>
-          <a href="#">Unidades</a>
+          <a href="#inicio">Inicio</a>
+          <a href="#entregas">Entregas</a>
+          <a href="#unidades">Unidades</a>
         </div>
         <button class="login-btn" type="button">Login</button>
       </nav>
     </header>
 
-    <main class="main-wrap">
-      <section class="panel" aria-label="Semana académica">
+    <main class="main-wrap" id="inicio-main">
+      <section class="panel" id="entregas" aria-label="Semana académica">
         <div class="panel-head">
           <div class="label"><strong>Unidad 2</strong> Gestión de datos académicos: 1 semana, 0 documentos y 30 infografías.</div>
         </div>
@@ -402,7 +405,7 @@
           <p class="unit-sub">Actividad 1: Métodos de la actividad alumno</p>
           <p class="unit-desc">Búsqueda, listado, ordenamiento y consultas sobre el arreglo de alumnos, con el código del proyecto.</p>
 
-          <div class="cards">
+          <div class="cards" id="unidades">
             <article class="card">
               <div class="card-top">
                 <span class="brand-mini">UPLA</span>
@@ -574,5 +577,11 @@
         </div>
       </section>
     </main>
+
+    <script>
+      if (!location.hash) {
+        location.hash = '#inicio';
+      }
+    </script>
   </body>
 </html>
